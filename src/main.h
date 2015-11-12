@@ -14,6 +14,8 @@
 #include <cstdlib>
 #include <atomic>
 
+#include "IsomirQuerySequence.h"
+
 struct Parameters {
 		char const* inputFile, *referenceFile, *outputFile;
 		bool humanReadable, best, half, all;

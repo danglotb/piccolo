@@ -91,6 +91,13 @@ int main(int argc, char const* argv[]) {
 #ifdef RNACOMP_COMPUTE_OPTIMAL_QUERY_SEQUENCE
 	OptimalQuerySequenceBuilder::generateCppCodeForOptimalQuerySequence();
 #else
+
+
+    isomir::QuerySequenceBuilder q(3);
+
+    std::cout << q << std::endl;
+
+    /*
 	Parameters parameters;
 	if (!parseParameters(argc, argv, parameters)) {
           std::cout << "piccolo v1.0.0\t\tDesigned by Sebastien BINI" << std::endl << std::endl;
@@ -149,7 +156,7 @@ int main(int argc, char const* argv[]) {
 	std::ostream out(outputBuffer);
 
 	run(sequences, index, out, parameters);
-
+*/
 #endif
 	return EXIT_SUCCESS;
 }

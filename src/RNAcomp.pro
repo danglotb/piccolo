@@ -11,7 +11,8 @@ SOURCES += main.cpp \
     RnaDataBase.cpp \
     QueryBuilder.cpp \
     OptimalQuerySequence.cpp \
-    RnaAlignment.cpp
+    RnaAlignment.cpp \
+    IsomirQuerySequence.cpp
 
 #include(deployment.pri)
 #qtcAddDeployment()
@@ -30,7 +31,9 @@ HEADERS += \
     QueryMeta.h \
     VariadicList.h \
     OptimalQuerySequenceTemplate.h \
-    main.h
+    main.h \
+    IsomirQuerySequenceTemplate.h \
+    IsomirQuerySequence.h
 
 CONFIG += c++11
 
