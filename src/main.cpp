@@ -47,6 +47,19 @@ bool parseParameters(int argc, char const* argv[], Parameters& parameters) {
 	return currentOption == -1 && parameters.referenceFile != nullptr;
 }
 
+using namespace isomir;
+
+#define K 3
+
+void runIsomir(RnaDataBase const& sequences, RnaIndex const& index, std::ostream& out, Parameters const& parameters) {
+    isomir::QuerySequence query_seq(K);
+    std::cout << query_seq << std::endl;
+    /*IsomirMatch matcher(index, query_seq);
+    for (MiRnaEntry const& entry : sequences) {
+        matcher.match(entry.second);
+    }*/
+}
+
 void run(RnaDataBase const& sequences, RnaIndex const& index, std::ostream& out, Parameters const& parameters) {
 	RnaMatch matcher(index);
 	if (parameters.half) {
@@ -91,13 +104,6 @@ int main(int argc, char const* argv[]) {
 #ifdef RNACOMP_COMPUTE_OPTIMAL_QUERY_SEQUENCE
 	OptimalQuerySequenceBuilder::generateCppCodeForOptimalQuerySequence();
 #else
-
-
-    isomir::QuerySequenceBuilder q(3);
-
-    std::cout << q << std::endl;
-
-    /*
 	Parameters parameters;
 	if (!parseParameters(argc, argv, parameters)) {
           std::cout << "piccolo v1.0.0\t\tDesigned by Sebastien BINI" << std::endl << std::endl;
@@ -155,8 +161,8 @@ int main(int argc, char const* argv[]) {
 		outputBuffer = std::cout.rdbuf();
 	std::ostream out(outputBuffer);
 
-	run(sequences, index, out, parameters);
-*/
+    runIsomir(sequences, index, out, parameters);
+
 #endif
 	return EXIT_SUCCESS;
 }

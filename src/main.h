@@ -15,6 +15,7 @@
 #include <atomic>
 
 #include "IsomirQuerySequence.h"
+#include "IsomirMatch.h"
 
 struct Parameters {
 		char const* inputFile, *referenceFile, *outputFile;

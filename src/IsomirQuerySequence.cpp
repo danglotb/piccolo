@@ -20,15 +20,15 @@ std::ostream& isomir::operator<<(std::ostream& os, const BlockQuery& b) {
     return os;
 }
 
-QuerySequenceBuilder::QuerySequenceBuilder(unsigned int k) {
-    for (unsigned int x = 1 ; x <= k + 1 ; x++) {
-        for (unsigned int i = x + 1 ; i <= k + 2 ; i++) {
+QuerySequence::QuerySequence(unsigned int k) : _k(k) {
+    for (unsigned int x = 1 ; x < k + 2 ; x++) {
+        for (unsigned int i = x + 1 ; i < k + 3 ; i++) {
             unsigned int e = x - 1;
             unsigned int j = i - x - 1;
             BlockQuery b;
             if (e + j == k) {
                 /*if (x == i - 1)
-                    b  = BlockQuery(x,i,e,-1);
+                    b  = BlockQuery(x,i,e,STAR);
                 else                Not Necessary*/
                     b = BlockQuery(x,i,e,STAR);
             } else
@@ -38,12 +38,12 @@ QuerySequenceBuilder::QuerySequenceBuilder(unsigned int k) {
     }
 }
 
-QuerySequenceBuilder::~QuerySequenceBuilder() {}
+QuerySequence::~QuerySequence() {}
 
-std::ostream& isomir::operator<<(std::ostream& os, const QuerySequenceBuilder& q) {
+std::ostream& isomir::operator<<(std::ostream& os, const QuerySequence& q) {
 
     for (auto it : q._sequence)
-        os << it << std::endl;
+        os << it;
 
     return os;
 }

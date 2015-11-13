@@ -10,14 +10,13 @@ namespace isomir {
 
 class BlockQuery {
 
-private:
+
+public:
 
     const unsigned int _blockA;
     const unsigned int _blockB;
     const unsigned int _err;
     const int _variation;
-
-public:
 
     BlockQuery();
     BlockQuery(const BlockQuery& that);
@@ -34,7 +33,7 @@ std::ostream& operator<<(std::ostream& os, const BlockQuery& b);
 
 typedef std::vector<BlockQuery> SequenceQuery;
 
-class QuerySequenceBuilder {
+class QuerySequence {
 
 private:
 
@@ -42,17 +41,22 @@ private:
 
 public:
 
-    QuerySequenceBuilder(unsigned int k);
-    ~QuerySequenceBuilder();
+    const unsigned int _k;
+
+    QuerySequence(unsigned int k);
+    ~QuerySequence();
 
     std::vector<BlockQuery>::iterator begin() { return _sequence.begin(); }
     std::vector<BlockQuery>::iterator end() { return _sequence.end(); }
 
-    friend std::ostream& operator<<(std::ostream& os, const QuerySequenceBuilder& q);
+    std::vector<BlockQuery>::const_iterator begin() const { return _sequence.begin(); }
+    std::vector<BlockQuery>::const_iterator end() const { return _sequence.end(); }
+
+    friend std::ostream& operator<<(std::ostream& os, const QuerySequence& q);
 
 };
 
-std::ostream& operator<<(std::ostream& os, const QuerySequenceBuilder& q);
+std::ostream& operator<<(std::ostream& os, const QuerySequence& q);
 
 }
 

@@ -61,6 +61,17 @@ std::string util::ntToString(const std::vector<nt>& seq) {
 	return ascii_seq;
 }
 
+std::ostream& operator<<(std::ostream& os, const nt n) {
+    os << util::ntToAscii(n);
+    return os;
+}
+
+std::ostream& operator<<(std::ostream& os, const RnaSequence& s) {
+    for (nt n : s)
+        os << n;
+    return os;
+}
+
 
 //DataStream& operator<<(DataStream& out, nt n) {
 //	return out << (u8)n;
