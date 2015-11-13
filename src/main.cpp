@@ -53,11 +53,10 @@ using namespace isomir;
 
 void runIsomir(RnaDataBase const& sequences, RnaIndex const& index, std::ostream& out, Parameters const& parameters) {
     isomir::QuerySequence query_seq(K);
-    std::cout << query_seq << std::endl;
-    /*IsomirMatch matcher(index, query_seq);
+    IsomirMatch matcher(index, query_seq);
     for (MiRnaEntry const& entry : sequences) {
         matcher.match(entry.second);
-    }*/
+    }
 }
 
 void run(RnaDataBase const& sequences, RnaIndex const& index, std::ostream& out, Parameters const& parameters) {

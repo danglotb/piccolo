@@ -2,10 +2,13 @@
 #define ISOMIRMATCH_H
 
 #include <sstream>
+#include <iostream>
 
+#include "Query.h"
 #include "RnaIndex.h"
 #include "RnaAlignment.h"
 #include "IsomirQuerySequence.h"
+#include "QueryResult.h"
 #include "Util.h"
 
 namespace isomir {
@@ -22,7 +25,9 @@ public:
     IsomirMatch(RnaIndex const& index, QuerySequence const& query_seq);
     ~IsomirMatch();
 
-    void match(RnaSequence seq);
+    void match(const std::vector<nt>& seq);
+    void match(const nt* seq_beg);
+    void processQueryResult(const QueryResult& queryResult);
 
 
 };

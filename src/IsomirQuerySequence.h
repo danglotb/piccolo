@@ -1,7 +1,7 @@
 #ifndef ISOMIRQUERYSEQUENCE_H
 #define ISOMIRQUERYSEQUENCE_H
 
-#define STAR -1
+#define STAR 0
 
 #include <vector>
 #include <sstream>
@@ -15,12 +15,12 @@ public:
 
     const unsigned int _blockA;
     const unsigned int _blockB;
-    const unsigned int _err;
+    const int _err;
     const int _variation;
 
     BlockQuery();
     BlockQuery(const BlockQuery& that);
-    BlockQuery(unsigned int blockA, unsigned int blockB, unsigned int err, int variation);
+    BlockQuery(unsigned int blockA, unsigned int blockB, int err, int variation);
     ~BlockQuery();
 
     BlockQuery& operator=(const BlockQuery&& that);

@@ -4,6 +4,8 @@
 #include <vector>
 #include <string>
 
+#include <sstream>
+
 #include "Util.h"
 
 //typedef std::vector<std::pair<std::string, std::string> const*> QueryResult;
@@ -42,9 +44,12 @@ class QueryResult {
 		}
 
 		template <class InputIterator>
-		void mergedWith(InputIterator begin, InputIterator end) { m_result.insert(m_result.end(), begin, end); }
+        void mergedWith(InputIterator begin, InputIterator end) { m_result.insert(m_result.end(), begin, end); }
 
+        friend std::ostream& operator<<(std::ostream& os, const QueryResult& q);
 
 };
+
+std::ostream& operator<<(std::ostream& os, const QueryResult& q);
 
 #endif // QUERYRESULT_H
