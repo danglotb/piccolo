@@ -10,14 +10,15 @@
 #include "IsomirQuerySequence.h"
 #include "QueryResult.h"
 #include "Util.h"
+#include "RnaMatch.h"
 
 namespace isomir {
 
-class IsomirMatch {
+class IsomirMatch : public RnaMatch {
 
 private:
 
-    RnaIndex const& _index;
+    //RnaIndex const& _index;
     QuerySequence const& _query_seq;
 
 public:

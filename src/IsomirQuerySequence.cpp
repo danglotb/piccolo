@@ -27,9 +27,9 @@ QuerySequence::QuerySequence(unsigned int k) : _k(k) {
             unsigned int j = i - x - 1;
             BlockQuery b;
             if (e + j == k) {
-                /*if (x == i - 1)
-                    b  = BlockQuery(x,i,k,STAR);
-                else                Not Necessary*/
+                if (x == i - 1)
+                    b  = BlockQuery(x,i,STAR,STAR);
+                else
                     b = BlockQuery(x,i,e,STAR);
             } else
                 b = BlockQuery(x,i,e,j);

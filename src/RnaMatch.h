@@ -14,6 +14,7 @@ class QueryMeta;
 
 class RnaMatch {
 
+protected:
 		RnaIndex const& m_index;
 
 		/**
@@ -63,7 +64,7 @@ class RnaMatch {
 
 		typedef std::vector<MiRnaAlignmentResult> RnaResult;
 
-	private:
+    protected:
 		std::vector<RnaResult> m_results; // one entry per mi rna
 		unsigned int m_minErrorFound;
 		nt const* m_seq_begin;
