@@ -18,7 +18,6 @@ class IsomirMatch : public RnaMatch {
 
 private:
 
-    //RnaIndex const& _index;
     QuerySequence const& _query_seq;
 
 public:
@@ -27,8 +26,13 @@ public:
     ~IsomirMatch();
 
     void match(const std::vector<nt>& seq);
-    void match(const nt* seq_beg);
-    void processQueryResult(const QueryResult& queryResult);
+
+    /**
+     * @brief match Overload of the above function
+     */
+    void match(nt const* sequence_begin, nt const* sequence_end);
+
+    void processQueryResult(nt const* seq_beg, nt const* seq_end,const QueryResult& queryResult);
 
 
 };

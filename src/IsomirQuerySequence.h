@@ -25,11 +25,8 @@ public:
 
     BlockQuery& operator=(const BlockQuery&& that);
 
-    friend std::ostream& operator<<(std::ostream& os, const BlockQuery& b);
 
 };
-
-std::ostream& operator<<(std::ostream& os, const BlockQuery& b);
 
 typedef std::vector<BlockQuery> SequenceQuery;
 
@@ -52,11 +49,7 @@ public:
     std::vector<BlockQuery>::const_iterator begin() const { return _sequence.begin(); }
     std::vector<BlockQuery>::const_iterator end() const { return _sequence.end(); }
 
-    friend std::ostream& operator<<(std::ostream& os, const QuerySequence& q);
-
 };
-
-std::ostream& operator<<(std::ostream& os, const QuerySequence& q);
 
 }
 

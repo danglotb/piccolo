@@ -4,6 +4,7 @@
 #include <vector>
 #include <deque>
 #include "Util.h"
+#include <iostream>
 
 enum class Operation { Match, Subsitution, Insertion, Deletion };
 
@@ -58,7 +59,7 @@ class RnaAlignment {
 		void backTrack(AlignmentResult& result, RnaIndex rnaId, SequenceIndex seqId);
 
 		void initMatrix() {
-			for (AlignmentScore* begin = scanSequenceRow(0), *it = scanSequenceRow(0), *end = scanSequenceRowEnd(0); it != end; ++it)
+            for (AlignmentScore* begin = scanSequenceRow(0), *it = scanSequenceRow(0), *end = scanSequenceRowEnd(0); it != end; ++it)
 				*it = AlignmentScore(it - begin, Operation::Deletion);
 			for (RnaIndex i = 1u; i < m_miRnaLength; i++)
 				at(i, 0) = AlignmentScore(i, Operation::Insertion);

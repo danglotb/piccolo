@@ -260,6 +260,7 @@ void RnaMatch::MiRnaAlignmentResult::mergeAlignmentResults(AlignmentResult&& fro
 
 void RnaMatch::MiRnaAlignmentResult::display(std::ostream& out, std::vector<nt> const& miRna, const nt* seq) const {
 	std::string seq_output, mirna_output, align_output;
+
 	seq_output.reserve(alignment.operations.size());
 	mirna_output.reserve(alignment.operations.size());
 	align_output.reserve(alignment.operations.size());

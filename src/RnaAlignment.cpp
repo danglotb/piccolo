@@ -40,8 +40,9 @@ AlignmentResult RnaAlignment::alignMiddle(const nt* seq, nt const* seqEnd, const
 
 	for (RnaIndex rnaId = 1u; rnaId <= rnaIdEnd; rnaId++, miRnaSeq++) {
 		nt const* sequence = seq;
-		for (SequenceIndex seqId = 1u; seqId <= seqIdEnd; seqId++, sequence++)
-			processScore(rnaId, seqId, *miRnaSeq, *sequence);
+        for (SequenceIndex seqId = 1u; seqId <= seqIdEnd; seqId++, sequence++) {
+            processScore(rnaId, seqId, *miRnaSeq, *sequence);
+        }
 	}
 
 	backTrack(result, rnaIdEnd, seqIdEnd);
@@ -61,5 +62,3 @@ AlignmentResult RnaAlignment::alignFront(const nt* seq, const nt* seqEnd, const 
 AlignmentResult RnaAlignment::alignBack(const nt* seq, const nt* seqEnd, const nt* knownMiRna, const nt* knownMiRnaEnd) {
 	return alignEdge(seq, seqEnd, knownMiRna, knownMiRnaEnd);
 }
-
-

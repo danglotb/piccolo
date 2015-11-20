@@ -56,6 +56,10 @@ void runIsomir(RnaDataBase const& sequences, RnaIndex const& index, std::ostream
     IsomirMatch matcher(index, query_seq);
     for (MiRnaEntry const& entry : sequences) {
         matcher.match(entry.second);
+        if (!matcher.displayResult(entry, out, parameters.humanReadable)) {
+            std::cerr << "Unable to write output." << std::endl;
+            return;
+        }
     }
 }
 
