@@ -15,6 +15,11 @@ BlockQuery& BlockQuery::operator=(const BlockQuery&& that) {
     return *this;
 }
 
+std::ostream& isomir::operator<<(std::ostream& os, const BlockQuery& b) {
+    os << b._err << "[" << b._blockA << ";" << b._blockB << ":" << b._variation << "]" << std::endl;
+    return os;
+}
+
 QuerySequence::QuerySequence(unsigned int k) : _k(k) {
     for (unsigned int x = 0 ; x < k + 1 ; x++) {
         for (unsigned int i = x + 1 ; i < k + 2 ; i++) {
