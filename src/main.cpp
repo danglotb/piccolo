@@ -47,8 +47,6 @@ bool parseParameters(int argc, char const* argv[], Parameters& parameters) {
 	return currentOption == -1 && parameters.referenceFile != nullptr;
 }
 
-using namespace isomir;
-
 #define K 3
 
 void runIsomir(RnaDataBase const& sequences, RnaIndex const& index, std::ostream& out, Parameters const& parameters) {

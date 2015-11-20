@@ -17,6 +17,8 @@
 #include "IsomirQuerySequence.h"
 #include "IsomirMatch.h"
 
+using namespace isomir;
+
 struct Parameters {
 		char const* inputFile, *referenceFile, *outputFile;
 		bool humanReadable, best, half, all;

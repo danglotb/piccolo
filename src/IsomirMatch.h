@@ -27,9 +27,6 @@ public:
 
     void match(const std::vector<nt>& seq);
 
-    /**
-     * @brief match Overload of the above function
-     */
     void match(nt const* sequence_begin, nt const* sequence_end);
 
     void processQueryResult(nt const* seq_beg, nt const* seq_end,const QueryResult& queryResult);
