@@ -238,7 +238,7 @@ void RnaIndex::buildIndex() {
 	Key key = 0u;
 	for (auto const& entry : *this) {
 		std::vector<nt> const& nt_seq = entry.second;
-		for (BlockId i = 0; i < BLOCK_COUNT-1; i++) for (BlockId j = i+1; j < BLOCK_COUNT-1; j++)
+        for (BlockId i = 0; i < BLOCK_COUNT-1; i++) for (BlockId j = i+1; j < BLOCK_COUNT-1; j++)
 			accessPairIndex(i, j).index(key, nt_seq.data(), nt_seq.size());
 		for (BlockId i = 0; i < BLOCK_COUNT-1; i++)
 			m_tailIndex[i].index(key, nt_seq.data(), nt_seq.size());

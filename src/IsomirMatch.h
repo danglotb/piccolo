@@ -3,6 +3,7 @@
 
 #include <sstream>
 #include <iostream>
+#include <algorithm>
 
 #include "Query.h"
 #include "RnaIndex.h"
@@ -19,6 +20,7 @@ class IsomirMatch : public RnaMatch {
 private:
 
     QuerySequence const& _query_seq;
+    std::vector<unsigned int> _indices;
 
 public:
 
@@ -30,7 +32,6 @@ public:
     void match(nt const* sequence_begin, nt const* sequence_end);
 
     void processQueryResult(nt const* seq_beg, nt const* seq_end,const QueryResult& queryResult);
-
 
 };
 

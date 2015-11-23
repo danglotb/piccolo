@@ -23,6 +23,8 @@ enum class nt : unsigned char {
 typedef std::vector<nt> RnaSequence;
 typedef std::pair<std::string, RnaSequence> MiRnaEntry;
 
+std::ostream& operator<<(std::ostream& os, const nt* s);
+
 std::ostream& operator<<(std::ostream& os, const RnaSequence& s);
 
 namespace util {

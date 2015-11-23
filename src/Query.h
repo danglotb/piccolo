@@ -46,4 +46,18 @@ class Query {
 
 };
 
+class QueryGap : public Query {
+
+    const int gap_blockA;
+    const int gap_between_block;
+
+public:
+
+    QueryGap(int gapBlockA, int gapBetweenBlock) : Query(), gap_blockA(gapBlockA), gap_between_block(gapBetweenBlock) {}
+
+    int gapBlockA() const {return gap_blockA;}
+    int gapBetweenBlock() const {return gap_between_block;}
+
+};
+
 #endif // QUERY_H

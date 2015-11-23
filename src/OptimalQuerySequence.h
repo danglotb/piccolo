@@ -70,6 +70,23 @@ struct BlockQuery {
 
 };
 
+//Unused
+struct BlockQueryGap : public BlockQuery {
+
+        int gap_blockA;
+        int gap_between_block;
+
+        BlockQueryGap() {}
+        BlockQueryGap(unsigned int blockA, unsigned int blockB,int gapBlockA, int gapBetweenBlock) : BlockQuery(blockA,blockB), gap_blockA(gapBlockA), gap_between_block(gapBetweenBlock) {}
+
+        BlockQueryGap(BlockQueryGap const&) = default;
+
+        bool operator<(BlockQueryGap const& other) const {
+            return blockA < other.blockA || (blockA == other.blockA && blockB < other.blockB);
+        }
+
+};
+
 typedef unsigned int Error;
 
 typedef std::vector<Error> ErrorDistribution;
@@ -84,11 +101,11 @@ typedef std::vector<QuerySequence> OptimalQuerySequence;
 
 class OptimalQuerySequenceBuilder {
 
-		std::vector<QueryBuilder> m_queries;
+        std::vector<QueryBuilder> m_queries;
 		std::vector<std::vector<QueryBuilder>::iterator> m_queryEnds;
 
 	public:
-		OptimalQuerySequenceBuilder();
+        OptimalQuerySequenceBuilder();
 		OptimalQuerySequenceBuilder(OptimalQuerySequenceBuilder&&) = default;
 
         std::vector<QueryBuilder>::iterator begin() { return m_queries.begin(); }

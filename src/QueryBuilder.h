@@ -20,7 +20,7 @@ class QueryBuilder {
 		const BlockHash BlockMaskA; //= BLOCK_MASK_AT(N);
 		const BlockHash BlockMaskB; //= BLOCK_MASK_AT(P);
 
-		Query m_lastQuery;
+        Query m_lastQuery;
 		QueryMeta m_queryMeta;
 
 	public:
@@ -28,16 +28,16 @@ class QueryBuilder {
 		QueryBuilder(BlockId blockA, BlockId blockB, unsigned int offset);
 
 		// seq points to the begining of the sequence
-		Query const& initialize(nt const* seq, nt const* seq_end);
+        Query const& initialize(nt const* seq, nt const* seq_end);
 
 		// seq points to the current position of the sequence
-		Query const& buildNextQuery(nt const* seq, nt const* seq_end);
+        Query const& buildNextQuery(nt const* seq, nt const* seq_end);
 
 		/// seq points to the current position of the sequence
 		/// seq_end - seq may be less than OffsetEndB
 		/// returns (true, q) if the query falls within the sequence
 		/// returns (false, q) otherwise. In this case, the query shall not be issued.
-		std::pair<bool, Query const&> buildNextQueryFromTruncatedSeq(nt const* seq, nt const* seq_end);
+        std::pair<bool, Query const&> buildNextQueryFromTruncatedSeq(nt const* seq, nt const* seq_end);
 
 		QueryMeta const& meta() const { return m_queryMeta; }
 

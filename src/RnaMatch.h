@@ -88,7 +88,8 @@ protected:
 		void displayExonerateResult(MiRnaEntry const& sequence, uint from, std::ostream& out) const;
 
 	public:
-		RnaMatch(RnaIndex const& index);
+        RnaMatch(RnaIndex const& index);
+        RnaMatch(RnaIndex const& index, unsigned int k);
 		RnaMatch(RnaMatch const& index) = default;
 		RnaMatch(RnaMatch&& index) = default;
 

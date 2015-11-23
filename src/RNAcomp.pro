@@ -33,7 +33,6 @@ HEADERS += \
     VariadicList.h \
     OptimalQuerySequenceTemplate.h \
     main.h \
-    IsomirQuerySequenceTemplate.h \
     IsomirQuerySequence.h \
     IsomirMatch.h
 

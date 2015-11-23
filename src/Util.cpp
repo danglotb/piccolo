@@ -72,6 +72,12 @@ std::ostream& operator<<(std::ostream& os, const RnaSequence& s) {
     return os;
 }
 
+std::ostream& operator<<(std::ostream& os, const nt* s) {
+
+    os << *s ;
+
+    return os;
+}
 
 //DataStream& operator<<(DataStream& out, nt n) {
 //	return out << (u8)n;

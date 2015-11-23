@@ -1,9 +1,1 @@
 #include "Query.h"
-
-
-
-
-
-
-
-
