@@ -10,6 +10,40 @@
 //    compute_and_assign_optimal_query_sequence<BLOCK_SIZES, BLOCK_ERROR_THRESHOLD>::assign(assigner);
 //}
 
+//OptimalQuerySequenceBuilder::OptimalQuerySequenceBuilder(unsigned int k, bool with_gap) {
+//    if (with_gap)
+//        init_sequence_with_gap(k);
+//    else
+//        init_sequence_without_gap(k);
+//}
+
+//void OptimalQuerySequenceBuilder::init_sequence_without_gap(unsigned int k) {
+//    for (unsigned int x = 0 ; x < k + 1 ; x++) {
+//        for (unsigned int i = x + 1 ; i < k + 2 ; i++) {
+//            _sequence.push_back(BlockQuery(x,i));
+//        }
+//    }
+//}
+
+//void OptimalQuerySequenceBuilder::init_sequence_with_gap(unsigned int k) {
+//    const int STAR = 0;
+//    for (unsigned int x = 0 ; x < k + 1 ; x++) {
+//        for (unsigned int i = x + 1 ; i < k + 2 ; i++) {
+//            unsigned int e = x>0?x:0;
+//            unsigned int j = i - x - 1;
+//            BlockQueryGap b;
+//            if (e + j == k) {
+//                if (x == i - 1)
+//                    b  = BlockQueryGap(x,i,STAR,STAR);
+//                else
+//                    b = BlockQueryGap(x,i,e,STAR);
+//            } else
+//                b = BlockQueryGap(x,i,e,j);
+//            _sequence.push_back(b);
+//        }
+//    }
+//}
+
 #include <algorithm>
 
 OptimalQuerySequenceBuilder::OptimalQuerySequenceBuilder() {

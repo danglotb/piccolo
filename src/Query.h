@@ -3,6 +3,8 @@
 
 #include <string>
 
+#include <sstream>
+
 #include "Util.h"
 
 class Query {
@@ -43,21 +45,10 @@ class Query {
 		void setTail(nt const* tail, nt const* tail_end) { m_tail = tail; m_tailEnd = tail_end; }
 
 
+        friend std::ostream& operator<<(std::ostream &os, Query q);
 
 };
 
-class QueryGap : public Query {
-
-    const int gap_blockA;
-    const int gap_between_block;
-
-public:
-
-    QueryGap(int gapBlockA, int gapBetweenBlock) : Query(), gap_blockA(gapBlockA), gap_between_block(gapBetweenBlock) {}
-
-    int gapBlockA() const {return gap_blockA;}
-    int gapBetweenBlock() const {return gap_between_block;}
-
-};
+std::ostream& operator<<(std::ostream &os, Query q);
 
 #endif // QUERY_H

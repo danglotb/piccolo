@@ -8,7 +8,7 @@
 typedef unsigned int BlockId;
 typedef unsigned int BlockHash;
 
-enum class nt : unsigned char {
+enum nt : unsigned char {
 	A = 0,
 	C = 1,
 	G = 2,
@@ -23,7 +23,7 @@ enum class nt : unsigned char {
 typedef std::vector<nt> RnaSequence;
 typedef std::pair<std::string, RnaSequence> MiRnaEntry;
 
-std::ostream& operator<<(std::ostream& os, const nt* s);
+std::ostream& operator<<(std::ostream& os, const nt s);
 
 std::ostream& operator<<(std::ostream& os, const RnaSequence& s);
 

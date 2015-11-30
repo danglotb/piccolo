@@ -70,7 +70,6 @@ struct BlockQuery {
 
 };
 
-//Unused
 struct BlockQueryGap : public BlockQuery {
 
         int gap_blockA;
@@ -102,24 +101,34 @@ typedef std::vector<QuerySequence> OptimalQuerySequence;
 class OptimalQuerySequenceBuilder {
 
         std::vector<QueryBuilder> m_queries;
-		std::vector<std::vector<QueryBuilder>::iterator> m_queryEnds;
+        std::vector<std::vector<QueryBuilder>::iterator> m_queryEnds;
+
+//        QuerySequence _sequence;
 
 	public:
         OptimalQuerySequenceBuilder();
+        OptimalQuerySequenceBuilder(unsigned int k, bool with_gap);
 		OptimalQuerySequenceBuilder(OptimalQuerySequenceBuilder&&) = default;
 
         std::vector<QueryBuilder>::iterator begin() { return m_queries.begin(); }
         std::vector<QueryBuilder>::iterator end() { return m_queries.end(); }
 
+//        std::vector<BlockQuery>::iterator begin() {return _sequence.begin();}
+//        std::vector<BlockQuery>::iterator end() {return _sequence.end();}
+
         std::vector<QueryBuilder>::iterator endForErrorThreshold(int threshold) {
             return m_queryEnds[threshold];
-		}
+        }
 
-		static OptimalQuerySequence computeOptimalQuerySequence();
+        static OptimalQuerySequence computeOptimalQuerySequence();
 
-		static void generateCppCodeForOptimalQuerySequence();
+        static void generateCppCodeForOptimalQuerySequence();
 
 	private:
+
+        void init_sequence_with_gap(unsigned int k);
+        void init_sequence_without_gap(unsigned int k);
+
 		typedef std::unordered_map<std::string, SetOfQuerySequence> dynmatrix;
 		typedef std::unordered_set<std::string> dynset;
 

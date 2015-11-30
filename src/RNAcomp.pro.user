@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 3.2.1, 2015-11-23T15:38:51. -->
+<!-- Written by QtCreator 3.2.1, 2015-11-26T14:52:29. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -237,7 +237,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">RNAcomp</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">RNAcomp2</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/home/m2mocad/danglot/piccolo/src/RNAcomp.pro</value>
-    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments">-h -r ../data/tref.fa -i ../data/tsat.fa</value>
+    <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.CommandLineArguments">-h -r ../data/3del.fa -i ../data/tsat.fa</value>
     <value type="QString" key="Qt4ProjectManager.Qt4RunConfiguration.ProFile">RNAcomp.pro</value>
     <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseDyldImageSuffix">false</value>
     <value type="bool" key="Qt4ProjectManager.Qt4RunConfiguration.UseTerminal">false</value>
