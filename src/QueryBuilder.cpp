@@ -9,13 +9,13 @@ QueryBuilder::QueryBuilder(BlockId blockA, BlockId blockB, unsigned int offset) 
 	m_lastQuery.setBlockIds(blockA, blockB);
 }
 
-const Query& QueryBuilder::initialize(const nt* seq, const nt* seq_end) {
+const QueryGap& QueryBuilder::initialize(const nt* seq, const nt* seq_end) {
 	m_lastQuery.setBlockHash(util::hash(seq, seq + SizeA), util::hash(seq + OffsetB, seq + OffsetEndB));
 	m_lastQuery.setTail(seq + OffsetEndB, seq_end);
 	return m_lastQuery;
 }
 
-const Query& QueryBuilder::buildNextQuery(const nt* seq, const nt*end) {
+const QueryGap& QueryBuilder::buildNextQuery(const nt* seq, const nt*end) {
 	m_lastQuery.rhashA() <<= 2;
 	m_lastQuery.rhashA() |= static_cast<u8>(*(seq + SizeA-1));
 	m_lastQuery.rhashA() &= BlockMaskA;

@@ -2,6 +2,7 @@
 #define OPTIMALQUERYSEQUENCETEMPLATE_H
 
 #include "VariadicList.h"
+#include <algorithm>
 
 namespace meta_prog {
 
@@ -14,6 +15,15 @@ struct BlockQuery {
 		static_assert(BlockA < BlockB, "Invalid block query");
 
 		static constexpr unsigned int allowedInbetweenErrors = BlockB - BlockA - 1;
+
+};
+
+template<unsigned int BlockA, unsigned int BlockB, int err_A, int gap_B>
+struct BlockQueryGap : BlockQuery<BlockA,BlockB> {
+
+    static constexpr unsigned int _err_A = err_A;
+
+    static constexpr unsigned int _gap_B = gap_B;
 
 };
 

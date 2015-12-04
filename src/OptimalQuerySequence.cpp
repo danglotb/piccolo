@@ -10,39 +10,50 @@
 //    compute_and_assign_optimal_query_sequence<BLOCK_SIZES, BLOCK_ERROR_THRESHOLD>::assign(assigner);
 //}
 
-//OptimalQuerySequenceBuilder::OptimalQuerySequenceBuilder(unsigned int k, bool with_gap) {
-//    if (with_gap)
-//        init_sequence_with_gap(k);
-//    else
-//        init_sequence_without_gap(k);
-//}
+OptimalQuerySequenceBuilder::OptimalQuerySequenceBuilder(bool isomir_mode) {
+    if (isomir_mode) {
+       computeSequenceForIsomir();
+    }  else {
+       OptimalQuerySequenceBuilder();
+    }
+}
 
-//void OptimalQuerySequenceBuilder::init_sequence_without_gap(unsigned int k) {
-//    for (unsigned int x = 0 ; x < k + 1 ; x++) {
-//        for (unsigned int i = x + 1 ; i < k + 2 ; i++) {
-//            _sequence.push_back(BlockQuery(x,i));
-//        }
-//    }
-//}
+void OptimalQuerySequenceBuilder::computeSequenceForIsomir() {
+    Assigner<true> assigner(m_queries,m_queryEnds);
 
-//void OptimalQuerySequenceBuilder::init_sequence_with_gap(unsigned int k) {
-//    const int STAR = 0;
+//    unsigned int k = 3;
+
+//    unsigned int STAR = 0;
+
+
 //    for (unsigned int x = 0 ; x < k + 1 ; x++) {
 //        for (unsigned int i = x + 1 ; i < k + 2 ; i++) {
 //            unsigned int e = x>0?x:0;
 //            unsigned int j = i - x - 1;
-//            BlockQueryGap b;
-//            if (e + j == k) {
-//                if (x == i - 1)
-//                    b  = BlockQueryGap(x,i,STAR,STAR);
-//                else
-//                    b = BlockQueryGap(x,i,e,STAR);
-//            } else
-//                b = BlockQueryGap(x,i,e,j);
-//            _sequence.push_back(b);
-//        }
-//    }
-//}
+    //            BlockQueryGap b;
+    //            if (e + j == k) {
+    //                if (x == i - 1)
+    //                    b  = BlockQueryGap(x,i,STAR,STAR);
+    //                else
+    //                    b = BlockQueryGap(x,i,e,STAR);
+    //            } else
+    //                b = BlockQueryGap(x,i,e,j);
+    //            _sequence.push_back(b);
+    //        }
+    //    }
+    //}
+
+   // QueryBuilder q;
+   // m_queries.push_back(q);
+
+    typedef meta_prog::OptimalQuerySequence<
+            meta_prog::QuerySequence<
+                meta_prog::BlockQueryGap<0, 1, 0 , 0>
+            >
+        >PrecomputedOptimalQuerySequence;
+    assign_optimal_query_sequence<BLOCK_SIZES, PrecomputedOptimalQuerySequence>::assign(assigner);
+}
+
 
 #include <algorithm>
 
