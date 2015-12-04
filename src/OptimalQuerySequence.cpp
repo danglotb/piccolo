@@ -25,21 +25,23 @@ void OptimalQuerySequenceBuilder::computeSequenceForIsomir() {
 
 //    unsigned int STAR = 0;
 
+
 //    for (unsigned int x = 0 ; x < k + 1 ; x++) {
 //        for (unsigned int i = x + 1 ; i < k + 2 ; i++) {
 //            unsigned int e = x>0?x:0;
 //            unsigned int j = i - x - 1;
-//            BlockQuery b;
-//            if (e + j == k) {
-//                if (x == i - 1)
-//                    b  = BlockQuery(x,i,STAR,STAR);
-//                else
-//                    b = BlockQuery(x,i,e,STAR);
-//            } else
-//                b = BlockQuery(x,i,e,j);
-//            _sequence.push_back(b);
-//        }
-//    }
+    //            BlockQueryGap b;
+    //            if (e + j == k) {
+    //                if (x == i - 1)
+    //                    b  = BlockQueryGap(x,i,STAR,STAR);
+    //                else
+    //                    b = BlockQueryGap(x,i,e,STAR);
+    //            } else
+    //                b = BlockQueryGap(x,i,e,j);
+    //            _sequence.push_back(b);
+    //        }
+    //    }
+    //}
 
    // QueryBuilder q;
    // m_queries.push_back(q);
@@ -52,6 +54,8 @@ void OptimalQuerySequenceBuilder::computeSequenceForIsomir() {
     assign_optimal_query_sequence<BLOCK_SIZES, PrecomputedOptimalQuerySequence>::assign(assigner);
 }
 
+
+#include <algorithm>
 
 OptimalQuerySequenceBuilder::OptimalQuerySequenceBuilder() {
     Assigner<false /* replace by 'true' to print the query sequence to the standard output */> assigner(m_queries, m_queryEnds);

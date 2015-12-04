@@ -100,17 +100,20 @@ typedef std::vector<QuerySequence> OptimalQuerySequence;
 
 class OptimalQuerySequenceBuilder {
 
+public:
+
+        OptimalQuerySequenceBuilder(OptimalQuerySequenceBuilder&&) = default;
+        OptimalQuerySequenceBuilder();
+        OptimalQuerySequenceBuilder(bool isomir_mode);
+
         std::vector<QueryBuilder> m_queries;
         std::vector<std::vector<QueryBuilder>::iterator> m_queryEnds;
 
-    public:
-        OptimalQuerySequenceBuilder();
-        OptimalQuerySequenceBuilder(OptimalQuerySequenceBuilder&&) = default;
-
-        OptimalQuerySequenceBuilder(bool isomir_mode);
-
         std::vector<QueryBuilder>::iterator begin() { return m_queries.begin(); }
         std::vector<QueryBuilder>::iterator end() { return m_queries.end(); }
+
+//        std::vector<BlockQuery>::iterator begin() {return _sequence.begin();}
+//        std::vector<BlockQuery>::iterator end() {return _sequence.end();}
 
         std::vector<QueryBuilder>::iterator endForErrorThreshold(int threshold) {
             return m_queryEnds[threshold];

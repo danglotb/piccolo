@@ -3,6 +3,8 @@
 
 #include <string>
 
+#include <sstream>
+
 #include "Util.h"
 
 class Query {
@@ -43,6 +45,7 @@ class Query {
 		void setTail(nt const* tail, nt const* tail_end) { m_tail = tail; m_tailEnd = tail_end; }
 
 
+        friend std::ostream& operator<<(std::ostream &os, Query q);
 
 };
 
