@@ -11,6 +11,9 @@ class Query {
 
 		BlockId m_blockA = 0, m_blockB = 0; //m_blockA must be < m_blockB
 		BlockHash m_hashA = 0, m_hashB = 0;
+
+        int m_err = 0, m_gap_block = 0;
+
 		nt const* m_tail = nullptr; // Tail is queried iff m_blockB == 4
 		nt const* m_tailEnd = nullptr;
 
