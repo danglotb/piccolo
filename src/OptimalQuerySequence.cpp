@@ -10,7 +10,48 @@
 //    compute_and_assign_optimal_query_sequence<BLOCK_SIZES, BLOCK_ERROR_THRESHOLD>::assign(assigner);
 //}
 
-#include <algorithm>
+OptimalQuerySequenceBuilder::OptimalQuerySequenceBuilder(bool isomir_mode) {
+    if (isomir_mode) {
+       computeSequenceForIsomir();
+    }  else {
+       OptimalQuerySequenceBuilder();
+    }
+}
+
+void OptimalQuerySequenceBuilder::computeSequenceForIsomir() {
+    Assigner<true> assigner(m_queries,m_queryEnds);
+
+//    unsigned int k = 3;
+
+//    unsigned int STAR = 0;
+
+//    for (unsigned int x = 0 ; x < k + 1 ; x++) {
+//        for (unsigned int i = x + 1 ; i < k + 2 ; i++) {
+//            unsigned int e = x>0?x:0;
+//            unsigned int j = i - x - 1;
+//            BlockQuery b;
+//            if (e + j == k) {
+//                if (x == i - 1)
+//                    b  = BlockQuery(x,i,STAR,STAR);
+//                else
+//                    b = BlockQuery(x,i,e,STAR);
+//            } else
+//                b = BlockQuery(x,i,e,j);
+//            _sequence.push_back(b);
+//        }
+//    }
+
+   // QueryBuilder q;
+   // m_queries.push_back(q);
+
+    typedef meta_prog::OptimalQuerySequence<
+            meta_prog::QuerySequence<
+                meta_prog::BlockQueryGap<0, 1, 0 , 0>
+            >
+        >PrecomputedOptimalQuerySequence;
+    assign_optimal_query_sequence<BLOCK_SIZES, PrecomputedOptimalQuerySequence>::assign(assigner);
+}
+
 
 OptimalQuerySequenceBuilder::OptimalQuerySequenceBuilder() {
     Assigner<false /* replace by 'true' to print the query sequence to the standard output */> assigner(m_queries, m_queryEnds);

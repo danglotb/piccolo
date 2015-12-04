@@ -55,10 +55,10 @@ void runIsomir(RnaDataBase const& sequences, RnaIndex const& index, std::ostream
     for (MiRnaEntry const& entry : sequences) {
         std::cout << entry.second << std::endl;
         matcher.match(entry.second);
-        if (!matcher.displayResult(entry, out, parameters.humanReadable)) {
+        /*if (!matcher.displayResult(entry, out, parameters.humanReadable)) {
             std::cerr << "Unable to write output." << std::endl;
             return;
-        }
+        }*/
     }
 }
 
@@ -163,7 +163,7 @@ int main(int argc, char const* argv[]) {
 		outputBuffer = std::cout.rdbuf();
 	std::ostream out(outputBuffer);
 
-    runIsomir(sequences, index, out, parameters);
+    run(sequences, index, out, parameters);
 
 #endif
 	return EXIT_SUCCESS;

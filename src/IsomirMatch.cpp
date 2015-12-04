@@ -34,7 +34,7 @@ void IsomirMatch::match(nt const* seq_beg, nt const* seq_end) {
                 //std::cout << (b._blockB*size_block+j) << ":" << (b._blockB+1)*size_block+offset_block_B+j<< std::endl;
 
                 q.setBlockHash(util::hash(seq_beg+(b._blockA*size_block+e), seq_beg+((b._blockA+1)*size_block+e)),
-                               util::hash(seq_beg+(b._blockB*size_block+j), seq_beg+((b._blockB+1)*size_block+offset_block_B+j)));
+                               util::hash(seq_beg+(b._blockB*size_block+j+e), seq_beg+((b._blockB+1)*size_block+offset_block_B+j+e)));
 
                 processQueryResult(seq_beg, seq_end, m_index.search(q));
             }
@@ -48,7 +48,7 @@ void IsomirMatch::processQueryResult(nt const* seq_beg, nt const* seq_end,const 
             _indices.push_back(rnaId);
             RnaResult& rnaResult = m_results[rnaId];
             MiRnaEntry const& miRna = m_index.at(rnaId);
-            //std::cout << "#" << rnaId << " " << miRna.second << std::endl;
+            std::cout << "#" << rnaId << " " << miRna.second << std::endl;
             MiRnaAlignmentResult r;
             r.alignment = m_aligner.alignMiddle(seq_beg, seq_end, miRna.second.data(), miRna.second.data() + miRna.second.size());
             rnaResult.push_back(std::move(r));
