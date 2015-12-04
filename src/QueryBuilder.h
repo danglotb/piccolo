@@ -13,6 +13,7 @@ class QueryBuilder {
 //		BlockId const BlockB;
 
 		const unsigned int SizeA; //= BLOCK_SIZE_AT(N);
+        const unsigned int OffsetA;
 		const unsigned int OffsetB; //= BLOCK_OFFSET_AT(P);
 //		const unsigned int OffsetEndA; //= BLOCK_OFFSET_AT(N);
 		const unsigned int OffsetEndB; //= BLOCK_OFFSET_AT(P);
@@ -25,7 +26,7 @@ class QueryBuilder {
 
 	public:
 		QueryBuilder(BlockId blockA, BlockId blockB);
-		QueryBuilder(BlockId blockA, BlockId blockB, unsigned int offset);
+        QueryBuilder(BlockId blockA, BlockId blockB, unsigned int offset);
 
 		// seq points to the begining of the sequence
         QueryGap const& initialize(nt const* seq, nt const* seq_end);

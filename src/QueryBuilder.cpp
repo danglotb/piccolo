@@ -5,12 +5,13 @@ QueryBuilder::QueryBuilder(BlockId blockA, BlockId blockB) : QueryBuilder(blockA
 
 QueryBuilder::QueryBuilder(BlockId blockA, BlockId blockB, unsigned int offset) : /*BlockA(blockA), BlockB(blockB),*/
 	SizeA(BLOCK_SIZE_AT(blockA)), OffsetB(offset), OffsetEndB(OffsetB + BLOCK_SIZE_AT(blockB)),
-	BlockMaskA(BLOCK_MASK_AT(blockA)), BlockMaskB(BLOCK_MASK_AT(blockB)), m_queryMeta(offset - SizeA) {
+    BlockMaskA(BLOCK_MASK_AT(blockA)), BlockMaskB(BLOCK_MASK_AT(blockB)), m_queryMeta(offset - SizeA), OffsetA(0) {
 	m_lastQuery.setBlockIds(blockA, blockB);
 }
 
 const QueryGap& QueryBuilder::initialize(const nt* seq, const nt* seq_end) {
-	m_lastQuery.setBlockHash(util::hash(seq, seq + SizeA), util::hash(seq + OffsetB, seq + OffsetEndB));
+    m_lastQuery.setBlockHash(util::hash(seq + OffsetA, seq + SizeA + OffsetA), util::hash(seq + OffsetB + OffsetA, seq + OffsetEndB + OffsetA));
+//	m_lastQuery.setBlockHash(util::hash(seq, seq + SizeA), util::hash(seq + OffsetB, seq + OffsetEndB));
 	m_lastQuery.setTail(seq + OffsetEndB, seq_end);
 	return m_lastQuery;
 }

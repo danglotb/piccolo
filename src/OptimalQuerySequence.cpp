@@ -48,7 +48,14 @@ void OptimalQuerySequenceBuilder::computeSequenceForIsomir() {
 
     typedef meta_prog::OptimalQuerySequence<
             meta_prog::QuerySequence<
-                meta_prog::BlockQueryGap<0, 1, 0 , 0>
+                meta_prog::BlockQueryGap<0, 1, 0, 0>
+            >,
+            meta_prog::QuerySequence<
+                meta_prog::BlockQueryGap<1, 3, 1, 1>
+            >,
+            meta_prog::QuerySequence<
+                meta_prog::BlockQueryGap<2, 3, 2, 0>,
+                meta_prog::BlockQueryGap<2, 4, 2, 0>
             >
         >PrecomputedOptimalQuerySequence;
     assign_optimal_query_sequence<BLOCK_SIZES, PrecomputedOptimalQuerySequence>::assign(assigner);
@@ -58,7 +65,7 @@ void OptimalQuerySequenceBuilder::computeSequenceForIsomir() {
 #include <algorithm>
 
 OptimalQuerySequenceBuilder::OptimalQuerySequenceBuilder() {
-    Assigner<false /* replace by 'true' to print the query sequence to the standard output */> assigner(m_queries, m_queryEnds);
+    Assigner<true /* replace by 'true' to print the query sequence to the standard output */> assigner(m_queries, m_queryEnds);
 
     // TO USE THE META PROGRAMMING VERSION, USE THE FOLLOWING LINE
     // THIS WILL COMPUTE THE OPTIMAL SEQUENCE VIA A TEMPLATE PROGRAM. BUT IT USES TOO MUCH MEMORY FOR LARGE BLOCK COUNT

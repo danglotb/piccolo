@@ -586,6 +586,17 @@ struct assign_block_query_helper_exec {
 			assigner.addQuery(BlockQuery_t::blockA, BlockQuery_t::blockB, Offset);
 		}
 };
+
+//template <class BlockQuery_t, unsigned int Offset, bool>
+//struct assign_block_query_helper_exec {
+//        static constexpr unsigned int assignCount = 1u;
+
+//        template <class Assigner_t>
+//        static void assign(Assigner_t& assigner) {
+//            assigner.addQuery(BlockQuery_t::blockA, BlockQuery_t::blockB, Offset);
+//        }
+//};
+
 template <class BlockQuery_t, unsigned int Offset>
 struct assign_block_query_helper_exec<BlockQuery_t, Offset, false> {
 		static constexpr unsigned int assignCount = 0u;

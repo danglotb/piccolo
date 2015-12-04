@@ -177,6 +177,8 @@ void RnaMatch::displayExonerateResult(const MiRnaEntry& sequence, uint from, std
 
 RnaMatch::RnaMatch(const RnaIndex& index) : m_index(index) {}
 
+RnaMatch::RnaMatch(RnaIndex const& index, bool isomir) : m_index(index), m_querySequence(isomir) {}
+
 void RnaMatch::match(const std::vector<nt>& sequence, bool best) {
 	match(sequence.data(), sequence.data() + sequence.size(), best);
 }

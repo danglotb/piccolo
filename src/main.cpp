@@ -63,7 +63,7 @@ void runIsomir(RnaDataBase const& sequences, RnaIndex const& index, std::ostream
 }
 
 void run(RnaDataBase const& sequences, RnaIndex const& index, std::ostream& out, Parameters const& parameters) {
-	RnaMatch matcher(index);
+    RnaMatch matcher(index);
 	if (parameters.half) {
 		for (MiRnaEntry const& entry : sequences) {
 			if (entry.second.size() > 10) {
