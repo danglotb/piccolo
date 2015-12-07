@@ -28,6 +28,9 @@ class QueryBuilder {
 		QueryBuilder(BlockId blockA, BlockId blockB);
         QueryBuilder(BlockId blockA, BlockId blockB, unsigned int offset);
 
+        //QueryBuilder constructor for querying isomiRs
+        QueryBuilder(BlockId blockA, BlockId blockB, unsigned int offsetA, unsigned int offsetB);
+
 		// seq points to the begining of the sequence
         QueryGap const& initialize(nt const* seq, nt const* seq_end);
 

@@ -23,6 +23,10 @@ struct Assigner {
             m_queries.emplace_back(blockIdA, blockIdB, blockOffset);
         }
 
+        void addQuery(unsigned int blockIdA, unsigned int blockIdB, unsigned int blockOffsetA, unsigned int blockOffsetB) {
+            m_queries.emplace_back(blockIdA, blockIdB, blockOffsetA, blockOffsetB);
+        }
+
         void addErrorCutoff(unsigned int queryPastEndIndex) {
             m_queryEnds.push_back(m_queries.begin()+queryPastEndIndex);
         }

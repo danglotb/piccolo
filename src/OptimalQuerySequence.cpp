@@ -10,6 +10,8 @@
 //    compute_and_assign_optimal_query_sequence<BLOCK_SIZES, BLOCK_ERROR_THRESHOLD>::assign(assigner);
 //}
 
+#include <iostream>
+
 OptimalQuerySequenceBuilder::OptimalQuerySequenceBuilder(bool isomir_mode) {
     if (isomir_mode) {
        computeSequenceForIsomir();
@@ -20,45 +22,27 @@ OptimalQuerySequenceBuilder::OptimalQuerySequenceBuilder(bool isomir_mode) {
 
 void OptimalQuerySequenceBuilder::computeSequenceForIsomir() {
     Assigner<true> assigner(m_queries,m_queryEnds);
-
-//    unsigned int k = 3;
-
-//    unsigned int STAR = 0;
-
-
-//    for (unsigned int x = 0 ; x < k + 1 ; x++) {
-//        for (unsigned int i = x + 1 ; i < k + 2 ; i++) {
-//            unsigned int e = x>0?x:0;
-//            unsigned int j = i - x - 1;
-    //            BlockQueryGap b;
-    //            if (e + j == k) {
-    //                if (x == i - 1)
-    //                    b  = BlockQueryGap(x,i,STAR,STAR);
-    //                else
-    //                    b = BlockQueryGap(x,i,e,STAR);
-    //            } else
-    //                b = BlockQueryGap(x,i,e,j);
-    //            _sequence.push_back(b);
-    //        }
-    //    }
-    //}
-
-   // QueryBuilder q;
-   // m_queries.push_back(q);
-
     typedef meta_prog::OptimalQuerySequence<
             meta_prog::QuerySequence<
-                meta_prog::BlockQueryGap<0, 1, 0, 0>
+                meta_prog::BlockQuery<0, 1>,
+                meta_prog::BlockQuery<0, 2>,
+                meta_prog::BlockQuery<0, 3>,
+                meta_prog::BlockQuery<0, 4>
             >,
             meta_prog::QuerySequence<
-                meta_prog::BlockQueryGap<1, 3, 1, 1>
+                meta_prog::BlockQuery<1, 2>,
+                meta_prog::BlockQuery<1, 3>,
+                meta_prog::BlockQuery<1, 4>
             >,
             meta_prog::QuerySequence<
-                meta_prog::BlockQueryGap<2, 3, 2, 0>,
-                meta_prog::BlockQueryGap<2, 4, 2, 0>
+                meta_prog::BlockQuery<2, 3>,
+                meta_prog::BlockQuery<2, 4>
+            >,
+            meta_prog::QuerySequence<
+                meta_prog::BlockQuery<3, 4>
             >
         >PrecomputedOptimalQuerySequence;
-    assign_optimal_query_sequence<BLOCK_SIZES, PrecomputedOptimalQuerySequence>::assign(assigner);
+    assign_optimal_query_sequence_iso<BLOCK_SIZES, PrecomputedOptimalQuerySequence>::assign(assigner);
 }
 
 
