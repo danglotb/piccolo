@@ -11,7 +11,7 @@ QueryBuilder::QueryBuilder(BlockId blockA, BlockId blockB, unsigned int offset) 
 
 QueryBuilder::QueryBuilder(BlockId blockA, BlockId blockB, unsigned int offsetA, unsigned int offsetB) : /*BlockA(blockA), BlockB(blockB),*/
     SizeA(BLOCK_SIZE_AT(blockA)), OffsetB(offsetB), OffsetEndB(OffsetB + BLOCK_SIZE_AT(blockB)),
-    BlockMaskA(BLOCK_MASK_AT(blockA)), BlockMaskB(BLOCK_MASK_AT(blockB)), m_queryMeta(offsetB - SizeA), OffsetA(offsetA) {
+    BlockMaskA(BLOCK_MASK_AT(blockA)), BlockMaskB(BLOCK_MASK_AT(blockB)), m_queryMeta(offsetB - SizeA), OffsetA(blockA*SizeA+offsetA) {
     m_lastQuery.setBlockIds(blockA, blockB);
 }
 

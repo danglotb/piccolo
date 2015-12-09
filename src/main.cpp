@@ -47,23 +47,8 @@ bool parseParameters(int argc, char const* argv[], Parameters& parameters) {
 	return currentOption == -1 && parameters.referenceFile != nullptr;
 }
 
-#define K 3
-
-void runIsomir(RnaDataBase const& sequences, RnaIndex const& index, std::ostream& out, Parameters const& parameters) {
-    isomir::QuerySequence query_seq(K);
-    IsomirMatch matcher(index, query_seq);
-    for (MiRnaEntry const& entry : sequences) {
-        std::cout << entry.second << std::endl;
-        matcher.match(entry.second);
-        /*if (!matcher.displayResult(entry, out, parameters.humanReadable)) {
-            std::cerr << "Unable to write output." << std::endl;
-            return;
-        }*/
-    }
-}
-
 void run(RnaDataBase const& sequences, RnaIndex const& index, std::ostream& out, Parameters const& parameters) {
-    RnaMatch matcher(index);
+    RnaMatch matcher(index,false);
 	if (parameters.half) {
 		for (MiRnaEntry const& entry : sequences) {
 			if (entry.second.size() > 10) {
@@ -78,7 +63,8 @@ void run(RnaDataBase const& sequences, RnaIndex const& index, std::ostream& out,
 				}
 				matcher.match(second_half_begin, second_half_end, true);
 				if (!matcher.displayResult(entry, second_half_begin-first_half_begin, out, parameters.humanReadable)) {
-					std::cerr << "Unable to write output." << std::endl;
+                    std::cerr << "Unable to write output."
+                              << std::endl;
 					return;
 				}
 			}

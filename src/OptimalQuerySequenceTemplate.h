@@ -577,7 +577,7 @@ struct assign_error_threshold_helper<ErrorThresholdList<>> {
 		static void assign(Assigner_t&) {}
 };
 
-template <class BlockQuery_t, unsigned int Offset, bool, bool>
+template <class BlockQuery_t, unsigned int Offset, bool>
 struct assign_block_query_helper_exec {
 		static constexpr unsigned int assignCount = 1u;
 
@@ -587,8 +587,8 @@ struct assign_block_query_helper_exec {
 		}
 };
 
-template <class BlockQuery_t, unsigned int Offset, bool isomir_mod>
-struct assign_block_query_helper_exec<BlockQuery_t, Offset, false, isomir_mod> {
+template <class BlockQuery_t, unsigned int Offset>
+struct assign_block_query_helper_exec<BlockQuery_t, Offset, false> {
 		static constexpr unsigned int assignCount = 0u;
 
 		template <class Assigner_t>
@@ -596,33 +596,29 @@ struct assign_block_query_helper_exec<BlockQuery_t, Offset, false, isomir_mod> {
 };
 
 //Template Isomir
-template <class BlockQuery_t, unsigned int Offset>
-struct assign_block_query_helper_exec_<BlockQuery_t, Offset, true, true>  {
+//template <class BlockQuery_t, unsigned int Offset>
+//struct assign_block_query_helper_exec<BlockQuery_t, Offset, true, true>  {
 
-    static constexpr int offsetB = BlockQuery_t::blockB - BlockQuery_t::blockA - 1;
-    static constexpr int offsetA = BlockQuery_t::blockA>0?BlockQuery_t::blockA:0;
-    static constexpr unsigned int assignCount = (2*offsetA+1)*(2*offsetB+1);
+//    static constexpr int offsetB = BlockQuery_t::blockB - BlockQuery_t::blockA - 1;
+//    static constexpr int offsetA = BlockQuery_t::blockA>0?BlockQuery_t::blockA:0;
+//    static constexpr unsigned int assignCount = (2*offsetA+1)*(2*offsetB+1);
 
-    template <class Assigner_t>
-    static void assign(Assigner_t& assigner) {
-        for (int oa = -offsetA ; oa <= offsetA ; oa++ ) {
-            for (int ob = -offsetB ; ob <= offsetB ; ob++ ) {
-                assigner.addQuery(BlockQuery_t::blockA, BlockQuery_t::blockB, oa, ob);
-            }
-        }
-    }
-};
+//    template <class Assigner_t>
+//    static void assign(Assigner_t& assigner) {
+//        assigner.addQuery(BlockQuery_t::blockA, BlockQuery_t::blockB, Offset);
+//    }
+//};
 
-template <class BlockMeta_t, class BlockQuery_t, unsigned int ErrorCutOffBegin, unsigned int ErrorCutOffEnd>
+template <class BlockMeta_t, class BlockQuery_t, unsigned int ErrorCutOffBegin, unsigned int ErrorCutOffEnd, bool isomir_mod>
 struct assign_block_query_helper_loop {
 	private:
 		static constexpr unsigned int Offset = BlockMeta_t::offsetAt(BlockQuery_t::blockB) - BlockMeta_t::offsetAt(BlockQuery_t::blockA);
 		static constexpr unsigned int Offset_1 = Offset - ErrorCutOffBegin;
 		static constexpr unsigned int Offset_2 = Offset + ErrorCutOffBegin;
 
-		typedef assign_block_query_helper_exec<BlockQuery_t, Offset_1, true> FirstAssignment;
-		typedef assign_block_query_helper_exec<BlockQuery_t, Offset_2, Offset_1 != Offset_2> SecondAssignment;
-		typedef assign_block_query_helper_loop<BlockMeta_t, BlockQuery_t, ErrorCutOffBegin+1, ErrorCutOffEnd> LastAssignment;
+        typedef assign_block_query_helper_exec<BlockQuery_t, Offset_1, true> FirstAssignment;
+        typedef assign_block_query_helper_exec<BlockQuery_t, Offset_2, Offset_1 != Offset_2> SecondAssignment;
+        typedef assign_block_query_helper_loop<BlockMeta_t, BlockQuery_t, ErrorCutOffBegin+1, ErrorCutOffEnd, isomir_mod> LastAssignment;
 
 	public:
 		static constexpr unsigned int assignCount = FirstAssignment::assignCount + SecondAssignment::assignCount + LastAssignment::assignCount;
@@ -635,8 +631,23 @@ struct assign_block_query_helper_loop {
 		}
 };
 
-template <class BlockMeta_t, class BlockQuery_t, unsigned int ErrorCutOffEnd>
-struct assign_block_query_helper_loop<BlockMeta_t, BlockQuery_t, ErrorCutOffEnd, ErrorCutOffEnd> {
+template <class BlockMeta_t, class BlockQuery_t, unsigned int ErrorCutOffBegin, unsigned int ErrorCutOffEnd>
+struct assign_block_query_helper_loop<BlockMeta_t, BlockQuery_t, ErrorCutOffBegin, ErrorCutOffEnd, true>  {
+    private:
+
+        typedef assign_block_query_helper_loop<BlockMeta_t, BlockQuery_t, ErrorCutOffBegin+1, ErrorCutOffEnd, true> LastAssignment;
+
+    public:
+        static constexpr unsigned int assignCount = 1;
+
+        template <class Assigner_t>
+        static void assign(Assigner_t& assigner) {
+            LastAssignment::assign(assigner);
+        }
+};
+
+template <class BlockMeta_t, class BlockQuery_t, unsigned int ErrorCutOffEnd, bool isomir_mod>
+struct assign_block_query_helper_loop<BlockMeta_t, BlockQuery_t, ErrorCutOffEnd, ErrorCutOffEnd, isomir_mod> {
 	public:
 		static constexpr unsigned int assignCount = 0u;
 
@@ -644,14 +655,14 @@ struct assign_block_query_helper_loop<BlockMeta_t, BlockQuery_t, ErrorCutOffEnd,
 		static void assign(Assigner_t&) {}
 };
 
-template <class BlockMeta_t, class BlockQuery_t, unsigned int ErrorCutOffBegin, unsigned int ErrorCutOffEnd>
+template <class BlockMeta_t, class BlockQuery_t, unsigned int ErrorCutOffBegin, unsigned int ErrorCutOffEnd, bool isomir_mod>
 struct assign_block_query_helper {
 	private:
 		static constexpr unsigned int _begin = min(BlockQuery_t::allowedInbetweenErrors, ErrorCutOffBegin);
 		static constexpr unsigned int _end = BlockQuery_t::allowedInbetweenErrors < ErrorCutOffBegin ?
 													_begin :
 													min(BlockQuery_t::allowedInbetweenErrors+1, ErrorCutOffEnd);
-		typedef assign_block_query_helper_loop<BlockMeta_t, BlockQuery_t, _begin, _end> Assignment;
+        typedef assign_block_query_helper_loop<BlockMeta_t, BlockQuery_t, _begin, _end, isomir_mod> Assignment;
 
 	public:
 		static constexpr unsigned int assignCount = Assignment::assignCount;
@@ -662,13 +673,13 @@ struct assign_block_query_helper {
 		}
 };
 
-template <class BlockMeta_t, class QuerySequence_t, unsigned int ErrorCutOffBegin, unsigned int ErrorCutOffEnd>
+template <class BlockMeta_t, class QuerySequence_t, unsigned int ErrorCutOffBegin, unsigned int ErrorCutOffEnd, bool isomir_mod>
 struct assign_query_sequence_helper {
 	private:
 		typedef assign_block_query_helper<BlockMeta_t, typename vlist::first<QuerySequence_t>::type,
-		ErrorCutOffBegin, ErrorCutOffEnd> FirstAssignment;
+        ErrorCutOffBegin, ErrorCutOffEnd, isomir_mod> FirstAssignment;
 		typedef assign_query_sequence_helper<BlockMeta_t, typename vlist::remove_first<QuerySequence_t>::type,
-		ErrorCutOffBegin, ErrorCutOffEnd> SecondAssignment;
+        ErrorCutOffBegin, ErrorCutOffEnd, isomir_mod> SecondAssignment;
 	public:
 		static constexpr unsigned int assignCount = FirstAssignment::assignCount + SecondAssignment::assignCount;
 
@@ -679,8 +690,8 @@ struct assign_query_sequence_helper {
 		}
 };
 
-template <class BlockMeta_t, unsigned int ErrorCutOffBegin, unsigned int ErrorCutOffEnd>
-struct assign_query_sequence_helper<BlockMeta_t, QuerySequence<>, ErrorCutOffBegin, ErrorCutOffEnd>  {
+template <class BlockMeta_t, unsigned int ErrorCutOffBegin, unsigned int ErrorCutOffEnd, bool isomir_mod>
+struct assign_query_sequence_helper<BlockMeta_t, QuerySequence<>, ErrorCutOffBegin, ErrorCutOffEnd, isomir_mod>  {
 		static constexpr unsigned int assignCount = 0u;
 
 		template <class Assigner_t>
@@ -752,31 +763,31 @@ struct assign_optimal_query_sequence {
 		}
 
 };
-template <class BlockMeta_t, unsigned int ErrorCount>
-struct compute_and_assign_optimal_query_sequence {
+//template <class BlockMeta_t, unsigned int ErrorCount>
+//struct compute_and_assign_optimal_query_sequence {
 
-	private:
-		typedef typename meta_prog::compute_optimal_query_sequence<ErrorCount, BlockMeta_t::block_count>::type OptimalSequence;
+//	private:
+//		typedef typename meta_prog::compute_optimal_query_sequence<ErrorCount, BlockMeta_t::block_count>::type OptimalSequence;
 
-	public:
-		template <class Assigner_t>
-		static void assign(Assigner_t& assigner) {
-			assign_optimal_query_sequence<BlockMeta_t, OptimalSequence>::assign(assigner);
-		}
+//	public:
+//		template <class Assigner_t>
+//		static void assign(Assigner_t& assigner) {
+//			assign_optimal_query_sequence<BlockMeta_t, OptimalSequence>::assign(assigner);
+//		}
 
-};
+//};
 
-template <class BlockMeta_t, class OptimalSequence_t>
-struct assign_optimal_query_sequence_iso {
+//template <class BlockMeta_t, class OptimalSequence_t>
+//struct assign_optimal_query_sequence_iso {
 
-    typedef meta_prog::priv::assign_block_query_helper_exec_iso<OptimalSequence_t> assigner_Block;
+//    typedef meta_prog::priv::assign_block_query_helper_exec_iso<OptimalSequence_t> assigner_Block;
 
-    public:
-    template<class Assigner_t>
-    static void assign(Assigner_t& assigner) {
-        assigner_Block::assign(assigner);
-    }
+//    public:
+//    template<class Assigner_t>
+//    static void assign(Assigner_t& assigner) {
+//        assigner_Block::assign(assigner);
+//    }
 
-};
+//};
 
 #endif // OPTIMALQUERYSEQUENCETEMPLATE_H

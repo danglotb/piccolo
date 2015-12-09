@@ -22,7 +22,7 @@ protected:
 		 */
 		static std::vector<nt> stringToNt(std::string const& seq);
 
-        OptimalQuerySequenceBuilder m_querySequence = OptimalQuerySequenceBuilder(true);
+        OptimalQuerySequenceBuilder m_querySequence;
 
 		/**
 		 * @brief processQuery Process the query q. This means it searches for miRNAs in the index and computes the distance.

@@ -50,6 +50,12 @@ struct Assigner<true> : Assigner<false> {
             std::cout << "Adding query for block: (" << blockIdA << ", " << blockIdB << ") offset: " << blockOffset << std::endl;
         }
 
+        void addQuery(unsigned int blockIdA, unsigned int blockIdB, unsigned int blockOffsetA, unsigned int blockOffsetB) {
+            MainClass::addQuery(blockIdA, blockIdB, blockOffsetA, blockOffsetB);
+            std::cout << "Adding query for block: (" << blockIdA << " + " << blockOffsetA << ", ";
+            std::cout << blockIdB << " + " << blockOffsetA << " + " << blockOffsetB << ")" << std::endl;
+        }
+
         void addErrorCutoff(unsigned int queryPastEndIndex) {
             MainClass::addErrorCutoff(queryPastEndIndex);
             std::cout << "Adding a cut-off at " << queryPastEndIndex << std::endl;
@@ -69,22 +75,6 @@ struct BlockQuery {
         BlockQuery(BlockQuery const&) = default;
 
         bool operator<(BlockQuery const& other) const {
-            return blockA < other.blockA || (blockA == other.blockA && blockB < other.blockB);
-        }
-
-};
-
-struct BlockQueryGap : public BlockQuery {
-
-        int gap_blockA;
-        int gap_between_block;
-
-        BlockQueryGap() {}
-        BlockQueryGap(unsigned int blockA, unsigned int blockB,int gapBlockA, int gapBetweenBlock) : BlockQuery(blockA,blockB), gap_blockA(gapBlockA), gap_between_block(gapBetweenBlock) {}
-
-        BlockQueryGap(BlockQueryGap const&) = default;
-
-        bool operator<(BlockQueryGap const& other) const {
             return blockA < other.blockA || (blockA == other.blockA && blockB < other.blockB);
         }
 
