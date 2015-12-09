@@ -42,7 +42,7 @@ void OptimalQuerySequenceBuilder::computeSequenceForIsomir() {
                 meta_prog::BlockQuery<3, 4>
             >
         >PrecomputedOptimalQuerySequence;
-    assign_optimal_query_sequence_iso<BLOCK_SIZES, PrecomputedOptimalQuerySequence>::assign(assigner);
+    assign_optimal_query_sequence_iso<BLOCK_SIZES, PrecomputedOptimalQuerySequence, true>::assign(assigner);
 }
 
 
@@ -85,7 +85,7 @@ OptimalQuerySequenceBuilder::OptimalQuerySequenceBuilder() {
     // ====================================================================================
     //		PASTE END
     // ====================================================================================
-    assign_optimal_query_sequence<BLOCK_SIZES, PrecomputedOptimalQuerySequence>::assign(assigner);
+    assign_optimal_query_sequence<BLOCK_SIZES, PrecomputedOptimalQuerySequence, false>::assign(assigner);
 }
 
 ErrorDistributionList OptimalQuerySequenceBuilder::errorSet(uint errorThreshold) {
