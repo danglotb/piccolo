@@ -13,29 +13,29 @@ class QueryBuilder {
 //		BlockId const BlockB;
 
 		const unsigned int SizeA; //= BLOCK_SIZE_AT(N);
-        const unsigned int OffsetA;
 		const unsigned int OffsetB; //= BLOCK_OFFSET_AT(P);
 //		const unsigned int OffsetEndA; //= BLOCK_OFFSET_AT(N);
 		const unsigned int OffsetEndB; //= BLOCK_OFFSET_AT(P);
 
+        const int E;
+
 		const BlockHash BlockMaskA; //= BLOCK_MASK_AT(N);
 		const BlockHash BlockMaskB; //= BLOCK_MASK_AT(P);
 
-        QueryGap m_lastQuery;
+        Query m_lastQuery;
 		QueryMeta m_queryMeta;
 
 	public:
 		QueryBuilder(BlockId blockA, BlockId blockB);
         QueryBuilder(BlockId blockA, BlockId blockB, unsigned int offset);
 
-        //QueryBuilder constructor for querying isomiRs
-        QueryBuilder(BlockId blockA, BlockId blockB, unsigned int offsetA, unsigned int offsetB);
+        QueryBuilder(BlockId blockA, BlockId blockB, unsigned int offset, int e);
 
 		// seq points to the begining of the sequence
-        QueryGap const& initialize(nt const* seq, nt const* seq_end);
+        Query const& initialize(nt const* seq, nt const* seq_end);
 
 		// seq points to the current position of the sequence
-        QueryGap const& buildNextQuery(nt const* seq, nt const* seq_end);
+        Query const& buildNextQuery(nt const* seq, nt const* seq_end);
 
 		/// seq points to the current position of the sequence
 		/// seq_end - seq may be less than OffsetEndB

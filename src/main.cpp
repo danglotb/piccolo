@@ -48,7 +48,7 @@ bool parseParameters(int argc, char const* argv[], Parameters& parameters) {
 }
 
 void run(RnaDataBase const& sequences, RnaIndex const& index, std::ostream& out, Parameters const& parameters) {
-    RnaMatch matcher(index,false);
+    RnaMatch matcher(index);
 	if (parameters.half) {
 		for (MiRnaEntry const& entry : sequences) {
 			if (entry.second.size() > 10) {

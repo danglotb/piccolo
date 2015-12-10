@@ -89,7 +89,6 @@ protected:
 
 	public:
         RnaMatch(RnaIndex const& index);
-        RnaMatch(RnaIndex const& index, bool isomir);
         RnaMatch(RnaIndex const& index, unsigned int k);
 		RnaMatch(RnaMatch const& index) = default;
 		RnaMatch(RnaMatch&& index) = default;

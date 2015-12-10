@@ -177,8 +177,6 @@ void RnaMatch::displayExonerateResult(const MiRnaEntry& sequence, uint from, std
 
 RnaMatch::RnaMatch(const RnaIndex& index) : m_index(index) {}
 
-RnaMatch::RnaMatch(RnaIndex const& index, bool isomir) : m_index(index), m_querySequence(isomir) {}
-
 void RnaMatch::match(const std::vector<nt>& sequence, bool best) {
 	match(sequence.data(), sequence.data() + sequence.size(), best);
 }
@@ -211,14 +209,14 @@ void RnaMatch::match(const nt* sequence_begin, const nt* sequence_end, bool best
 
 	// Process until the end of the sequence
 	// Extra care must be taken as the blocks queried may fall outside the sequence
-	for (; sequence_begin < sequence_end; sequence_begin++) {
-		for (auto query_it = m_querySequence.begin(), e = m_querySequence.endForErrorThreshold(m_minErrorFound); query_it != e; ++query_it) {
-			// auto <=> std::pair<bool, Query const&>
-			auto query = query_it->buildNextQueryFromTruncatedSeq(sequence_begin, sequence_end);
-			if (query.first)
-				processQuery(sequence_begin - m_seq_begin, query.second, query_it->meta());
-		}
-	}
+    for (; sequence_begin < sequence_end; sequence_begin++) {
+        for (auto query_it = m_querySequence.begin(), e = m_querySequence.endForErrorThreshold(m_minErrorFound); query_it != e; ++query_it) {
+            // auto <=> std::pair<bool, Query const&>
+            auto query = query_it->buildNextQueryFromTruncatedSeq(sequence_begin, sequence_end);
+            if (query.first)
+                processQuery(sequence_begin - m_seq_begin, query.second, query_it->meta());
+        }
+    }
 }
 
 bool RnaMatch::displayResult(const MiRnaEntry& sequence, std::ostream& out, bool humanReadable) const {

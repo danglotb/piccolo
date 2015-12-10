@@ -10,47 +10,10 @@
 //    compute_and_assign_optimal_query_sequence<BLOCK_SIZES, BLOCK_ERROR_THRESHOLD>::assign(assigner);
 //}
 
-#include <iostream>
-
-OptimalQuerySequenceBuilder::OptimalQuerySequenceBuilder(bool isomir_mode) {
-    if (isomir_mode) {
-       computeSequenceForIsomir();
-    }  else {
-       OptimalQuerySequenceBuilder();
-    }
-}
-
-void OptimalQuerySequenceBuilder::computeSequenceForIsomir() {
-    Assigner<true> assigner(m_queries,m_queryEnds);
-    typedef meta_prog::OptimalQuerySequence<
-            meta_prog::QuerySequence<
-                meta_prog::BlockQuery<0, 1>,
-                meta_prog::BlockQuery<0, 2>,
-                meta_prog::BlockQuery<0, 3>,
-                meta_prog::BlockQuery<0, 4>
-            >,
-            meta_prog::QuerySequence<
-                meta_prog::BlockQuery<1, 2>,
-                meta_prog::BlockQuery<1, 3>,
-                meta_prog::BlockQuery<1, 4>
-            >,
-            meta_prog::QuerySequence<
-                meta_prog::BlockQuery<2, 3>,
-                meta_prog::BlockQuery<2, 4>
-            >,
-            meta_prog::QuerySequence<
-                meta_prog::BlockQuery<3, 4>
-            >
-        >PrecomputedOptimalQuerySequence;
-    assign_optimal_query_sequence<BLOCK_SIZES, PrecomputedOptimalQuerySequence, true>::assign(assigner);
-}
-
-
 #include <algorithm>
 
 OptimalQuerySequenceBuilder::OptimalQuerySequenceBuilder() {
     Assigner<true /* replace by 'true' to print the query sequence to the standard output */> assigner(m_queries, m_queryEnds);
-
     // TO USE THE META PROGRAMMING VERSION, USE THE FOLLOWING LINE
     // THIS WILL COMPUTE THE OPTIMAL SEQUENCE VIA A TEMPLATE PROGRAM. BUT IT USES TOO MUCH MEMORY FOR LARGE BLOCK COUNT
         //	typedef meta_prog::compute_optimal_query_sequence<BLOCK_ERROR_THRESHOLD, BLOCK_COUNT>::type PrecomputedOptimalQuerySequence;
@@ -85,7 +48,7 @@ OptimalQuerySequenceBuilder::OptimalQuerySequenceBuilder() {
     // ====================================================================================
     //		PASTE END
     // ====================================================================================
-    assign_optimal_query_sequence<BLOCK_SIZES, PrecomputedOptimalQuerySequence, false>::assign(assigner);
+    assign_optimal_query_sequence<BLOCK_SIZES, PrecomputedOptimalQuerySequence, true>::assign(assigner);
 }
 
 ErrorDistributionList OptimalQuerySequenceBuilder::errorSet(uint errorThreshold) {

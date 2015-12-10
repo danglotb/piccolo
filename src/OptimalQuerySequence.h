@@ -23,8 +23,8 @@ struct Assigner {
             m_queries.emplace_back(blockIdA, blockIdB, blockOffset);
         }
 
-        void addQuery(unsigned int blockIdA, unsigned int blockIdB, unsigned int blockOffsetA, unsigned int blockOffsetB) {
-            m_queries.emplace_back(blockIdA, blockIdB, blockOffsetA, blockOffsetB);
+        void addQuery(unsigned int blockIdA, unsigned int blockIdB, unsigned int blockOffset, int e) {
+            m_queries.emplace_back(blockIdA, blockIdB, blockOffset, e);
         }
 
         void addErrorCutoff(unsigned int queryPastEndIndex) {
@@ -50,10 +50,9 @@ struct Assigner<true> : Assigner<false> {
             std::cout << "Adding query for block: (" << blockIdA << ", " << blockIdB << ") offset: " << blockOffset << std::endl;
         }
 
-        void addQuery(unsigned int blockIdA, unsigned int blockIdB, unsigned int blockOffsetA, unsigned int blockOffsetB) {
-            MainClass::addQuery(blockIdA, blockIdB, blockOffsetA, blockOffsetB);
-            std::cout << "Adding query for block: (" << blockIdA << " + " << blockOffsetA << ", ";
-            std::cout << blockIdB << " + " << blockOffsetA << " + " << blockOffsetB << ")" << std::endl;
+        void addQuery(unsigned int blockIdA, unsigned int blockIdB, unsigned int blockOffset, int e) {
+            MainClass::addQuery(blockIdA, blockIdB, blockOffset, e);
+            std::cout << "Adding query for block: "<< e << " (" << blockIdA << ", " << blockIdB << ") offset: " << blockOffset << std::endl;
         }
 
         void addErrorCutoff(unsigned int queryPastEndIndex) {
