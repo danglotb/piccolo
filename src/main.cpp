@@ -2,8 +2,8 @@
 
 bool parseParameters(int argc, char const* argv[], Parameters& parameters) {
 	enum { I_OPTION = 0, R_OPTION = 1, O_OPTION = 2 };
-	std::array<char const*, 4> boolOptions({"-h", "--best", "--half", "--all"});
-	std::array<bool*, 4> boolOptionsOutput({&parameters.humanReadable, &parameters.best, &parameters.half, &parameters.all});
+    std::array<char const*, 5> boolOptions({"-h", "--best", "--half", "--all", "-isomir"});
+    std::array<bool*, 5> boolOptionsOutput({&parameters.humanReadable, &parameters.best, &parameters.half, &parameters.all, &parameters.isomir});
 	std::array<char const*, 3> textOptions({"-i", "-r", "-o"});
 	std::array<char const**, 3> textOptionsOutput({&parameters.inputFile, &parameters.referenceFile, &parameters.outputFile});
 	int currentOption = -1;

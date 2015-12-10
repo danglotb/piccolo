@@ -622,18 +622,18 @@ struct assign_block_query_helper_loop<BlockMeta_t, BlockQuery_t, ErrorCutOffEnd,
 
 
 //add Query isomiR
-template <class BlockQuery_t, unsigned int Offset, int e, bool>
+template <class BlockQuery_t, unsigned int Offset, int e, int j, bool>
 struct assign_block_query_helper_exec_iso {
         static constexpr unsigned int assignCount = 1;
 
         template <class Assigner_t>
         static void assign(Assigner_t& assigner) {
-            assigner.addQuery(BlockQuery_t::blockA, BlockQuery_t::blockB, Offset, e);
+            assigner.addQuery(BlockQuery_t::blockA, BlockQuery_t::blockB, Offset, e, j);
         }
 };
 
-template <class BlockQuery_t, unsigned int Offset, int e>
-struct assign_block_query_helper_exec_iso<BlockQuery_t, Offset, e, false> {
+template <class BlockQuery_t, unsigned int Offset, int e, int j>
+struct assign_block_query_helper_exec_iso<BlockQuery_t, Offset, e, j, false> {
         static constexpr unsigned int assignCount = 0u;
 
         template <class Assigner_t>
@@ -648,9 +648,10 @@ struct assign_block_query_helper_loop<BlockMeta_t, BlockQuery_t, ErrorCutOffBegi
         static constexpr unsigned int Offset_1 = Offset - ErrorCutOffBegin;
         static constexpr unsigned int Offset_2 = Offset + ErrorCutOffBegin;
         static constexpr int e = BlockQuery_t::blockA > 0 ? BlockQuery_t::blockA : 0;
+        static constexpr int j = BlockQuery_t::blockB - BlockQuery_t::blockA - 1;
 
-        typedef assign_block_query_helper_exec_iso<BlockQuery_t, Offset_1, e, true> FirstAssignment;
-        typedef assign_block_query_helper_exec_iso<BlockQuery_t, Offset_2, e, Offset_1 != Offset_2> SecondAssignment;
+        typedef assign_block_query_helper_exec_iso<BlockQuery_t, Offset_1, e, j, true> FirstAssignment;
+        typedef assign_block_query_helper_exec_iso<BlockQuery_t, Offset_2, e, j, Offset_1 != Offset_2> SecondAssignment;
         typedef assign_block_query_helper_loop<BlockMeta_t, BlockQuery_t, ErrorCutOffBegin+1, ErrorCutOffEnd, true> LastAssignment;
 
     public:

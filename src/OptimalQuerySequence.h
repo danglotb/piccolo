@@ -23,8 +23,8 @@ struct Assigner {
             m_queries.emplace_back(blockIdA, blockIdB, blockOffset);
         }
 
-        void addQuery(unsigned int blockIdA, unsigned int blockIdB, unsigned int blockOffset, int e) {
-            m_queries.emplace_back(blockIdA, blockIdB, blockOffset, e);
+        void addQuery(unsigned int blockIdA, unsigned int blockIdB, unsigned int blockOffset, int e, int j) {
+            m_queries.emplace_back(blockIdA, blockIdB, blockOffset, e, j);
         }
 
         void addErrorCutoff(unsigned int queryPastEndIndex) {
@@ -50,9 +50,9 @@ struct Assigner<true> : Assigner<false> {
             std::cout << "Adding query for block: (" << blockIdA << ", " << blockIdB << ") offset: " << blockOffset << std::endl;
         }
 
-        void addQuery(unsigned int blockIdA, unsigned int blockIdB, unsigned int blockOffset, int e) {
-            MainClass::addQuery(blockIdA, blockIdB, blockOffset, e);
-            std::cout << "Adding query for block: "<< e << " (" << blockIdA << ", " << blockIdB << ") offset: " << blockOffset << std::endl;
+        void addQuery(unsigned int blockIdA, unsigned int blockIdB, unsigned int blockOffset, int e, int j) {
+            MainClass::addQuery(blockIdA, blockIdB, blockOffset, e, j);
+            std::cout << "Adding query for block: "<< e << " (" << blockIdA << ", " << blockIdB << ") offset: " << blockOffset << ": " << j << std::endl;
         }
 
         void addErrorCutoff(unsigned int queryPastEndIndex) {
@@ -97,7 +97,6 @@ public:
 
         OptimalQuerySequenceBuilder(OptimalQuerySequenceBuilder&&) = default;
         OptimalQuerySequenceBuilder();
-        OptimalQuerySequenceBuilder(bool isomir_mode);
 
         std::vector<QueryBuilder> m_queries;
         std::vector<std::vector<QueryBuilder>::iterator> m_queryEnds;
@@ -105,8 +104,8 @@ public:
         std::vector<QueryBuilder>::iterator begin() { return m_queries.begin(); }
         std::vector<QueryBuilder>::iterator end() { return m_queries.end(); }
 
-//        std::vector<BlockQuery>::iterator begin() {return _sequence.begin();}
-//        std::vector<BlockQuery>::iterator end() {return _sequence.end();}
+//      std::vector<BlockQuery>::iterator begin() {return _sequence.begin();}
+//      std::vector<BlockQuery>::iterator end() {return _sequence.end();}
 
         std::vector<QueryBuilder>::iterator endForErrorThreshold(int threshold) {
             return m_queryEnds[threshold];
