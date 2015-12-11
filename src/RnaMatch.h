@@ -100,15 +100,15 @@ protected:
 		 * @brief match Main function. Runs the entire algorithm on a sequence.
 		 * @param best if true, returns only the best results. Returns all results otherwise (with no more than 3 errors).
 		 */
-		void match(std::string const& sequence, bool best) { return match(util::stringToNt(sequence), best); }
+        void match(std::string const& sequence, bool best, bool global) { return match(util::stringToNt(sequence), best, global); }
 		/**
 		 * @brief match Overload of the above function
 		 */
-		void match(std::vector<nt> const& sequence, bool best);
+        void match(std::vector<nt> const& sequence, bool best, bool global);
 		/**
 		 * @brief match Overload of the above function
 		 */
-		void match(nt const* sequence_begin, nt const* sequence_end, bool best);
+        void match_small_in_large(nt const* sequence_begin, nt const* sequence_end, bool best);
 
 		bool displayResult(MiRnaEntry const& sequence, std::ostream& out, bool humanReadable) const;
 		bool displayResult(MiRnaEntry const& sequence, uint from, std::ostream& out, bool humanReadable) const;

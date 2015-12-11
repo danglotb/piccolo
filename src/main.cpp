@@ -2,8 +2,8 @@
 
 bool parseParameters(int argc, char const* argv[], Parameters& parameters) {
 	enum { I_OPTION = 0, R_OPTION = 1, O_OPTION = 2 };
-    std::array<char const*, 5> boolOptions({"-h", "--best", "--half", "--all", "-isomir"});
-    std::array<bool*, 5> boolOptionsOutput({&parameters.humanReadable, &parameters.best, &parameters.half, &parameters.all, &parameters.isomir});
+    std::array<char const*, 6> boolOptions({"-h", "--best", "--half", "--all", "-l", "-g"});
+    std::array<bool*, 6> boolOptionsOutput({&parameters.humanReadable, &parameters.best, &parameters.half, &parameters.all, &parameters.local, &parameters.global});
 	std::array<char const*, 3> textOptions({"-i", "-r", "-o"});
 	std::array<char const**, 3> textOptionsOutput({&parameters.inputFile, &parameters.referenceFile, &parameters.outputFile});
 	int currentOption = -1;
@@ -56,12 +56,12 @@ void run(RnaDataBase const& sequences, RnaIndex const& index, std::ostream& out,
 				nt const* first_half_end = first_half_begin + (entry.second.size() / 2) + 5;
 				nt const* second_half_begin = first_half_end - 10;
 				nt const* second_half_end = first_half_begin + entry.second.size();
-				matcher.match(first_half_begin, first_half_end, true);
+                matcher.match_small_in_large(first_half_begin, first_half_end, true);
 				if (!matcher.displayResult(entry, out, parameters.humanReadable)) {
 					std::cerr << "Unable to write output." << std::endl;
 					return;
 				}
-				matcher.match(second_half_begin, second_half_end, true);
+                matcher.match_small_in_large(second_half_begin, second_half_end, true);
 				if (!matcher.displayResult(entry, second_half_begin-first_half_begin, out, parameters.humanReadable)) {
                     std::cerr << "Unable to write output."
                               << std::endl;
@@ -69,7 +69,7 @@ void run(RnaDataBase const& sequences, RnaIndex const& index, std::ostream& out,
 				}
 			}
 			else {
-				matcher.match(entry.second, false);
+                matcher.match(entry.second, false, parameters.global);
 				if (!matcher.displayResult(entry, out, parameters.humanReadable)) {
 					std::cerr << "Unable to write output." << std::endl;
 					return;
@@ -79,7 +79,7 @@ void run(RnaDataBase const& sequences, RnaIndex const& index, std::ostream& out,
 	}
 	else {
 		for (MiRnaEntry const& entry : sequences) {
-			matcher.match(entry.second, parameters.best);
+            matcher.match(entry.second, parameters.best, parameters.global);
 			if (!matcher.displayResult(entry, out, parameters.humanReadable)) {
 				std::cerr << "Unable to write output." << std::endl;
 				return;

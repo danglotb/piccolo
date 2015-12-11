@@ -17,26 +17,15 @@ class QueryBuilder {
 //		const unsigned int OffsetEndA; //= BLOCK_OFFSET_AT(N);
 		const unsigned int OffsetEndB; //= BLOCK_OFFSET_AT(P);
 
-        const int E;
-        const int J;
-
-        int it_e;
-        int it_j;
-
 		const BlockHash BlockMaskA; //= BLOCK_MASK_AT(N);
 		const BlockHash BlockMaskB; //= BLOCK_MASK_AT(P);
 
         Query m_lastQuery;
 		QueryMeta m_queryMeta;
 
-        //iso_mod?
-        void update_cursor();
-
 	public:
 		QueryBuilder(BlockId blockA, BlockId blockB);
         QueryBuilder(BlockId blockA, BlockId blockB, unsigned int offset);
-
-        QueryBuilder(BlockId blockA, BlockId blockB, unsigned int offset, int e, int j);
 
 		// seq points to the begining of the sequence
         Query const& initialize(nt const* seq, nt const* seq_end);

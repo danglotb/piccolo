@@ -19,6 +19,7 @@ class Query {
 		Query() {}
 		Query(Query const&) = default;
 		Query(Query&&) = default;
+        Query(BlockId blockA, BlockId blockB) : m_blockA(blockA) , m_blockB(blockB) {}
 
 		Query& operator=(Query const&) = default;
 		Query& operator=(Query&&) = default;
@@ -44,7 +45,6 @@ class Query {
 		nt const* tailEnd() const { return m_tailEnd; }
 		void advanceTail() { m_tail++; }
 		void setTail(nt const* tail, nt const* tail_end) { m_tail = tail; m_tailEnd = tail_end; }
-
 
         friend std::ostream& operator<<(std::ostream &os, Query q);
 

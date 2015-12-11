@@ -177,17 +177,20 @@ void RnaMatch::displayExonerateResult(const MiRnaEntry& sequence, uint from, std
 
 RnaMatch::RnaMatch(const RnaIndex& index) : m_index(index) {}
 
-void RnaMatch::match(const std::vector<nt>& sequence, bool best) {
-	match(sequence.data(), sequence.data() + sequence.size(), best);
+void RnaMatch::match(const std::vector<nt>& sequence, bool best, bool global) {
+    if (global)
+        match_small_in_large(sequence.data(), sequence.data() + sequence.size(), best);
+    else
+        match_small_in_large(sequence.data(), sequence.data() + sequence.size(), best);
 }
 
-void RnaMatch::match(const nt* sequence_begin, const nt* sequence_end, bool best) {
+void RnaMatch::match_small_in_large(const nt* sequence_begin, const nt* sequence_end, bool best) {
 	if (sequence_begin == sequence_end)
 		return;
 
 	reset(sequence_end-sequence_begin, m_index);
 	m_seq_begin = sequence_begin;
-        m_seq_end = sequence_end;
+    m_seq_end = sequence_end;
 	m_findBest = best;
 
 
