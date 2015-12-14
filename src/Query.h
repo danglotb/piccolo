@@ -9,6 +9,8 @@
 
 class Query {
 
+    protected:
+
 		BlockId m_blockA = 0, m_blockB = 0; //m_blockA must be < m_blockB
 		BlockHash m_hashA = 0, m_hashB = 0;
 
@@ -50,4 +52,19 @@ class Query {
 
 };
 
+
+class QueryGlobal : public Query {
+
+   public:
+    QueryGlobal() : Query() {}
+    QueryGlobal(QueryGlobal const&) = default;
+    QueryGlobal(QueryGlobal&&) = default;
+    QueryGlobal(BlockId blockA, BlockId blockB, int OffsetA, int OffsetB) : Query(blockA, blockB), m_offsetA(OffsetA), m_offsetB(OffsetB) {}
+    int m_offsetA;
+    int m_offsetB;
+    friend std::ostream& operator<<(std::ostream& os, const QueryGlobal& b);
+
+};
+
+std::ostream& operator<<(std::ostream& os, const QueryGlobal& b);
 #endif // QUERY_H

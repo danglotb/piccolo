@@ -13,7 +13,7 @@
 #include <algorithm>
 
 OptimalQuerySequenceBuilder::OptimalQuerySequenceBuilder() {
-    Assigner<false /* replace by 'true' to print the query sequence to the standard output */> assigner(m_queries, m_queryEnds);
+    Assigner<false /* replace by 'true' to print the query sequence to the standard output */> assigner_local(m_queries, m_queryEnds, m_queries_global);
     // TO USE THE META PROGRAMMING VERSION, USE THE FOLLOWING LINE
     // THIS WILL COMPUTE THE OPTIMAL SEQUENCE VIA A TEMPLATE PROGRAM. BUT IT USES TOO MUCH MEMORY FOR LARGE BLOCK COUNT
         //	typedef meta_prog::compute_optimal_query_sequence<BLOCK_ERROR_THRESHOLD, BLOCK_COUNT>::type PrecomputedOptimalQuerySequence;
@@ -48,9 +48,13 @@ OptimalQuerySequenceBuilder::OptimalQuerySequenceBuilder() {
     // ====================================================================================
     //		PASTE END
     // ====================================================================================
-    assign_optimal_query_sequence<BLOCK_SIZES, PrecomputedOptimalQuerySequence>::assign(assigner);
+    assign_optimal_query_sequence<BLOCK_SIZES, PrecomputedOptimalQuerySequence>::assign(assigner_local);
 
-    Assigner<true> assigner(m_queries, m_queryEnds);
+
+    // ====================================================================================
+    //		Global
+    // ====================================================================================
+    Assigner<true> assigner_global(m_queries, m_queryEnds, m_queries_global);
     typedef meta_prog::QuerySequence<
             meta_prog::BlockQuery<0,1>,
             meta_prog::BlockQuery<0,2>,
@@ -63,7 +67,7 @@ OptimalQuerySequenceBuilder::OptimalQuerySequenceBuilder() {
             meta_prog::BlockQuery<2,4>,
             meta_prog::BlockQuery<3,4>
             > QuerySequenceGlobal;
-        assign_global_sequence<BLOCK_SIZES, QuerySequenceGlobal>::assign(assigner);
+        assign_global_sequence<BLOCK_SIZES, QuerySequenceGlobal, QuerySequenceGlobal::size,3>::assign(assigner_global);
 
 }
 

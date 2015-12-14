@@ -9,12 +9,13 @@
 template <bool DisplayQuerySequence = false>
 struct Assigner {
 
-        std::vector<Query> m_queries_global;
         std::vector<QueryBuilder>& m_queries;
         std::vector<std::vector<QueryBuilder>::iterator>& m_queryEnds;
+        std::vector<QueryGlobal>& m_queries_global;
 
-        Assigner(std::vector<QueryBuilder>& queries, std::vector<std::vector<QueryBuilder>::iterator>& queryEnds) : m_queries(queries),
-        m_queryEnds(queryEnds) {}
+        Assigner(std::vector<QueryBuilder>& queries, std::vector<std::vector<QueryBuilder>::iterator>& queryEnds
+                 , std::vector<QueryGlobal>& queries_global) :
+           m_queries(queries), m_queryEnds(queryEnds) , m_queries_global(queries_global){}
 
         void reserveQueryMemory(unsigned int amount) {
             m_queries.reserve(amount);
@@ -24,8 +25,8 @@ struct Assigner {
             m_queries.emplace_back(blockIdA, blockIdB, blockOffset);
         }
 
-        void addQueryGlobal(unsigned int blockIdA, unsigned int blockIdB) {
-            m_queries_global.emplace_back(blockIdA, blockIdB);
+        void addQueryGlobal(unsigned int blockIdA, unsigned int blockIdB, int offsetA, int offsetB) {
+            m_queries_global.emplace_back(blockIdA, blockIdB, offsetA, offsetB);
         }
 
         void addErrorCutoff(unsigned int queryPastEndIndex) {
@@ -51,9 +52,10 @@ struct Assigner<true> : Assigner<false> {
             std::cout << "Adding query for block: (" << blockIdA << ", " << blockIdB << ") offset: " << blockOffset << std::endl;
         }
 
-        void addQueryGlobal(unsigned int blockIdA, unsigned int blockIdB) {
-            MainClass::addQueryGlobal(blockIdA, blockIdB);
-            std::cout << "Adding query for block: (" << blockIdA << ", " << blockIdB << " )"<< std::endl;
+        void addQueryGlobal(unsigned int blockIdA, unsigned int blockIdB, int offsetA, int offsetB) {
+            MainClass::addQueryGlobal(blockIdA, blockIdB, offsetA, offsetB);
+            std::cout << "Adding query for block: " << offsetA<< " ( " << blockIdA << ", ";
+            std::cout << blockIdB << " ) " << offsetB << std::endl;
         }
 
         void addErrorCutoff(unsigned int queryPastEndIndex) {
@@ -99,7 +101,7 @@ public:
         OptimalQuerySequenceBuilder(OptimalQuerySequenceBuilder&&) = default;
         OptimalQuerySequenceBuilder();
 
-        std::vector<Query> m_queries_global;
+        std::vector<QueryGlobal> m_queries_global;
         std::vector<QueryBuilder> m_queries;
         std::vector<std::vector<QueryBuilder>::iterator> m_queryEnds;
 

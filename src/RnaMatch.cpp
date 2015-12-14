@@ -179,9 +179,48 @@ RnaMatch::RnaMatch(const RnaIndex& index) : m_index(index) {}
 
 void RnaMatch::match(const std::vector<nt>& sequence, bool best, bool global) {
     if (global)
-        match_small_in_large(sequence.data(), sequence.data() + sequence.size(), best);
+        match_global(sequence.data(), sequence.data() + sequence.size());
     else
         match_small_in_large(sequence.data(), sequence.data() + sequence.size(), best);
+}
+
+void RnaMatch::match_global(const nt* sequence_begin, const nt* sequence_end) {
+
+    const unsigned int k = 3;
+
+    unsigned int size_block = (sequence_end - sequence_begin) / (k + 2);
+
+    reset(sequence_end - sequence_begin, m_index);
+
+    reset(sequence_end-sequence_begin, m_index);
+    m_seq_begin = sequence_begin;
+    m_seq_end = sequence_end;
+    m_findBest = false;
+
+
+    for (QueryGlobal b : m_querySequence.m_queries_global) {
+
+        Query q;
+        q.setBlockIds(b.blockA(), b.blockB());
+
+        for (int j = -b.m_offsetB ; j <= b.m_offsetB ; j++) {
+            for (int e = -b.m_offsetA ; e <= b.m_offsetA; e++) {
+
+                unsigned int offset_block_B = 0;
+
+                if (b.blockB() == k + 1) //last block
+                    offset_block_B = (sequence_end - sequence_begin) % (k + 2);
+
+                q.setBlockHash(util::hash(sequence_begin+(b.blockA()*size_block+e), sequence_begin+((b.blockA()+1)*size_block+e)),
+                               util::hash(sequence_begin+(b.blockB()*size_block+j+e), sequence_begin+((b.blockB()+1)*size_block+offset_block_B+j+e)));
+
+                unsigned int offsetMeta =  (b.blockB()*size_block+j) - (b.blockA()+1)*size_block;
+
+                processQueryResult((b.blockA()*size_block+e) , q, QueryMeta(offsetMeta), m_index.search(q));
+            }
+        }
+    }
+
 }
 
 void RnaMatch::match_small_in_large(const nt* sequence_begin, const nt* sequence_end, bool best) {

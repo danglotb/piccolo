@@ -110,6 +110,13 @@ protected:
 		 */
         void match_small_in_large(nt const* sequence_begin, nt const* sequence_end, bool best);
 
+        /**
+         * @brief match_global
+         * @param sequence_begin
+         * @param sequence_end
+         */
+        void match_global(const nt* sequence_begin, const nt* sequence_end);
+
 		bool displayResult(MiRnaEntry const& sequence, std::ostream& out, bool humanReadable) const;
 		bool displayResult(MiRnaEntry const& sequence, uint from, std::ostream& out, bool humanReadable) const;
 };
