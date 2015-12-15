@@ -186,17 +186,15 @@ void RnaMatch::match(const std::vector<nt>& sequence, bool best, bool global) {
 
 void RnaMatch::match_global(const nt* sequence_begin, const nt* sequence_end) {
 
-    const unsigned int k = 3;
+    const unsigned int k = BLOCK_COUNT - 2;
 
     unsigned int size_block = (sequence_end - sequence_begin) / (k + 2);
 
     reset(sequence_end - sequence_begin, m_index);
 
-    reset(sequence_end-sequence_begin, m_index);
     m_seq_begin = sequence_begin;
     m_seq_end = sequence_end;
     m_findBest = false;
-
 
     for (QueryGlobal b : m_querySequence.m_queries_global) {
 

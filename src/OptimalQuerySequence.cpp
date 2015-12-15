@@ -16,35 +16,35 @@ OptimalQuerySequenceBuilder::OptimalQuerySequenceBuilder() {
     Assigner<false /* replace by 'true' to print the query sequence to the standard output */> assigner_local(m_queries, m_queryEnds, m_queries_global);
     // TO USE THE META PROGRAMMING VERSION, USE THE FOLLOWING LINE
     // THIS WILL COMPUTE THE OPTIMAL SEQUENCE VIA A TEMPLATE PROGRAM. BUT IT USES TOO MUCH MEMORY FOR LARGE BLOCK COUNT
-        //	typedef meta_prog::compute_optimal_query_sequence<BLOCK_ERROR_THRESHOLD, BLOCK_COUNT>::type PrecomputedOptimalQuerySequence;
+    //	typedef meta_prog::compute_optimal_query_sequence<BLOCK_ERROR_THRESHOLD, BLOCK_COUNT>::type PrecomputedOptimalQuerySequence;
     // OTHERWISE, JUST PASTE THE OUTPUT OF OptimalQuerySequenceBuilder::generateCppCodeForOptimalQuerySequence() here:
     // ====================================================================================
     //		PASTE BEGIN
     // ====================================================================================
     //Paste the code below in the constructor of OptimalQuerySequenceBuilder:
-    #ifndef RNACOMP_COMPUTE_OPTIMAL_QUERY_SEQUENCE
+#ifndef RNACOMP_COMPUTE_OPTIMAL_QUERY_SEQUENCE
     static_assert(BLOCK_COUNT == 5, "The optimal query sequence and the block configuration don't match. Please recompile with RNACOMP_COMPUTE_OPTIMAL_QUERY_SEQUENCE (#define). Then run the program and paste the output in the constructor of OptimalQuerySequenceBuilder.");
-    #endif
+#endif
     typedef meta_prog::OptimalQuerySequence<
-        meta_prog::QuerySequence<
+            meta_prog::QuerySequence<
             meta_prog::BlockQuery<0, 1>
-        >,
-        meta_prog::QuerySequence<
+            >,
+            meta_prog::QuerySequence<
             meta_prog::BlockQuery<3, 4>
-        >,
-        meta_prog::QuerySequence<
+            >,
+            meta_prog::QuerySequence<
             meta_prog::BlockQuery<2, 3>,
             meta_prog::BlockQuery<2, 4>
-        >,
-        meta_prog::QuerySequence<
+            >,
+            meta_prog::QuerySequence<
             meta_prog::BlockQuery<0, 2>,
             meta_prog::BlockQuery<0, 3>,
             meta_prog::BlockQuery<0, 4>,
             meta_prog::BlockQuery<1, 2>,
             meta_prog::BlockQuery<1, 3>,
             meta_prog::BlockQuery<1, 4>
-        >
-    > PrecomputedOptimalQuerySequence;
+            >
+            > PrecomputedOptimalQuerySequence;
     // ====================================================================================
     //		PASTE END
     // ====================================================================================
@@ -54,7 +54,7 @@ OptimalQuerySequenceBuilder::OptimalQuerySequenceBuilder() {
     // ====================================================================================
     //		Global
     // ====================================================================================
-    Assigner<true> assigner_global(m_queries, m_queryEnds, m_queries_global);
+    Assigner<false> assigner_global(m_queries, m_queryEnds, m_queries_global);
     typedef meta_prog::QuerySequence<
             meta_prog::BlockQuery<0,1>,
             meta_prog::BlockQuery<0,2>,
@@ -67,7 +67,7 @@ OptimalQuerySequenceBuilder::OptimalQuerySequenceBuilder() {
             meta_prog::BlockQuery<2,4>,
             meta_prog::BlockQuery<3,4>
             > QuerySequenceGlobal;
-        assign_global_sequence<BLOCK_SIZES, QuerySequenceGlobal, QuerySequenceGlobal::size,3>::assign(assigner_global);
+    assign_global_sequence<BLOCK_SIZES, QuerySequenceGlobal, QuerySequenceGlobal::size, 3>::assign(assigner_global);
 
 }
 
@@ -75,17 +75,17 @@ ErrorDistributionList OptimalQuerySequenceBuilder::errorSet(uint errorThreshold)
     ErrorDistributionList result;
     generate_errors_loop_init(result, errorThreshold, BLOCK_COUNT > 0);
 
-//	for (ErrorDistribution const& d : result) {
-//		std::cout << "Error distribution [" << errorThreshold << "]: ";
-//		for (unsigned int e : d)
-//			std::cout << e << " ";
-//		std::cout << std::endl;
-//	}
+    //	for (ErrorDistribution const& d : result) {
+    //		std::cout << "Error distribution [" << errorThreshold << "]: ";
+    //		for (unsigned int e : d)
+    //			std::cout << e << " ";
+    //		std::cout << std::endl;
+    //	}
     return result;
 }
 
 void OptimalQuerySequenceBuilder::generate_errors_loop_init(ErrorDistributionList& list, unsigned int NestedLoopCount, bool LoopContinues) {
-//	std::cout << "INIT: (" << NestedLoopCount << ", " << LoopContinues << ")" << std::endl;
+    //	std::cout << "INIT: (" << NestedLoopCount << ", " << LoopContinues << ")" << std::endl;
     if (NestedLoopCount == 0u || !LoopContinues)
         return;
     std::vector<uint> ids;
@@ -94,10 +94,10 @@ void OptimalQuerySequenceBuilder::generate_errors_loop_init(ErrorDistributionLis
 }
 
 void OptimalQuerySequenceBuilder::generate_errors_loop_main(ErrorDistributionList& list, unsigned int NestedLoopCount, bool LoopContinues, std::vector<uint> ids) {
-//	std::cout << "MAIN: (" << NestedLoopCount << ", " << LoopContinues << "); ids={";
-//	for (uint i : ids)
-//		std::cout << i << " ";
-//	std::cout << "}" << std::endl;
+    //	std::cout << "MAIN: (" << NestedLoopCount << ", " << LoopContinues << "); ids={";
+    //	for (uint i : ids)
+    //		std::cout << i << " ";
+    //	std::cout << "}" << std::endl;
     if (!LoopContinues)
         return;
     if (NestedLoopCount == 0u) {
@@ -156,7 +156,7 @@ unsigned int OptimalQuerySequenceBuilder::scoreQuerySequence(const QuerySequence
 
 unsigned int OptimalQuerySequenceBuilder::scoreOptimalQuerySequence(const OptimalQuerySequence& q) {
     unsigned int score = 0u;
-//	int i = 0;
+    //	int i = 0;
     std::for_each(q.begin(), q.end(), [&score](QuerySequence const& seq) { score += scoreQuerySequence(seq, BLOCK_ERROR_THRESHOLD); });
     return score;
 }
@@ -187,8 +187,8 @@ SetOfQuerySequence OptimalQuerySequenceBuilder::findOptimalSetOfQuerySequence(ui
 }
 
 SetOfQuerySequence OptimalQuerySequenceBuilder::findOptimalSetOfQuerySequence_rec(const QuerySequence& querySeq, const std::string& querySeqString,
-                                                                           ErrorDistributionList const& errors,
-                                                                           OptimalQuerySequenceBuilder::dynmatrix& cache) {
+                                                                                  ErrorDistributionList const& errors,
+                                                                                  OptimalQuerySequenceBuilder::dynmatrix& cache) {
     if (!evaluateQuerySequence(querySeq, errors)) {
         return cache[querySeqString] = SetOfQuerySequence();
     }
@@ -230,34 +230,34 @@ SetOfQuerySequence OptimalQuerySequenceBuilder::findOptimalSetOfQuerySequence_re
 }
 
 void OptimalQuerySequenceBuilder::computeOptimalQuerySequence(const std::vector<SetOfQuerySequence>& optimalQueries, uint errorThreshold,
-                                                                              OptimalQuerySequence const& optimalBeingBuilt, unsigned int currentScore,
-                                                                              QuerySequence const& concatenatedOptimalBeingBuilt,
-                                                                              OptimalQuerySequence& found,
-                                                                              unsigned int& foundScore) {
+                                                              OptimalQuerySequence const& optimalBeingBuilt, unsigned int currentScore,
+                                                              QuerySequence const& concatenatedOptimalBeingBuilt,
+                                                              OptimalQuerySequence& found,
+                                                              unsigned int& foundScore) {
     if (errorThreshold == BLOCK_ERROR_THRESHOLD) {
         finalizeComputeOptimalQuerySequence(optimalQueries, optimalBeingBuilt, currentScore, concatenatedOptimalBeingBuilt, found, foundScore);
         return;
     }
     else {
-//		std::cout << errorThreshold << std::endl;
+        //		std::cout << errorThreshold << std::endl;
         SetOfQuerySequence const& q = optimalQueries[errorThreshold];
-//		unsigned int score = scoreOptimalQuerySequence(optimalBeingBuilt);
+        //		unsigned int score = scoreOptimalQuerySequence(optimalBeingBuilt);
         for (QuerySequence const& seq : q) {
-//			if (std::includes(seq.begin(), seq.end(), concatenatedOptimalBeingBuilt.begin(), concatenatedOptimalBeingBuilt.end())) {
-                QuerySequence newSeq;
-                std::set_difference(seq.begin(), seq.end(), concatenatedOptimalBeingBuilt.begin(), concatenatedOptimalBeingBuilt.end(), std::back_inserter(newSeq));
-                unsigned int finalScore = currentScore + scoreQuerySequence(newSeq, BLOCK_ERROR_THRESHOLD);
-                if (foundScore == 0u || finalScore < foundScore) {
-                    QuerySequence newConcatenatedOptimalBeingBuilt;
-                    std::set_union(newSeq.begin(), newSeq.end(), concatenatedOptimalBeingBuilt.begin(), concatenatedOptimalBeingBuilt.end(),
-                                   std::back_inserter(newConcatenatedOptimalBeingBuilt));
-                    OptimalQuerySequence newOptimalBeingBuilt = optimalBeingBuilt;
-                    newOptimalBeingBuilt.push_back(newSeq);
+            //			if (std::includes(seq.begin(), seq.end(), concatenatedOptimalBeingBuilt.begin(), concatenatedOptimalBeingBuilt.end())) {
+            QuerySequence newSeq;
+            std::set_difference(seq.begin(), seq.end(), concatenatedOptimalBeingBuilt.begin(), concatenatedOptimalBeingBuilt.end(), std::back_inserter(newSeq));
+            unsigned int finalScore = currentScore + scoreQuerySequence(newSeq, BLOCK_ERROR_THRESHOLD);
+            if (foundScore == 0u || finalScore < foundScore) {
+                QuerySequence newConcatenatedOptimalBeingBuilt;
+                std::set_union(newSeq.begin(), newSeq.end(), concatenatedOptimalBeingBuilt.begin(), concatenatedOptimalBeingBuilt.end(),
+                               std::back_inserter(newConcatenatedOptimalBeingBuilt));
+                OptimalQuerySequence newOptimalBeingBuilt = optimalBeingBuilt;
+                newOptimalBeingBuilt.push_back(newSeq);
 
-                    computeOptimalQuerySequence(optimalQueries, errorThreshold+1, newOptimalBeingBuilt, finalScore,
-                                                newConcatenatedOptimalBeingBuilt, found, foundScore);
-                }
-//			}
+                computeOptimalQuerySequence(optimalQueries, errorThreshold+1, newOptimalBeingBuilt, finalScore,
+                                            newConcatenatedOptimalBeingBuilt, found, foundScore);
+            }
+            //			}
         }
     }
 }
@@ -268,33 +268,33 @@ void OptimalQuerySequenceBuilder::finalizeComputeOptimalQuerySequence(const std:
                                                                       OptimalQuerySequence& found,
                                                                       unsigned int& foundScore) {
     SetOfQuerySequence const& q = optimalQueries.back();
-//	unsigned int score = scoreOptimalQuerySequence(optimalBeingBuilt);
+    //	unsigned int score = scoreOptimalQuerySequence(optimalBeingBuilt);
     for (QuerySequence const& seq : q) {
-//		if (std::includes(seq.begin(), seq.end(), concatenatedOptimalBeingBuilt.begin(), concatenatedOptimalBeingBuilt.end())) {
-            QuerySequence newSeq;
-            std::set_difference(seq.begin(), seq.end(), concatenatedOptimalBeingBuilt.begin(), concatenatedOptimalBeingBuilt.end(), std::back_inserter(newSeq));
-            unsigned int finalScore = currentScore + scoreQuerySequence(newSeq, BLOCK_ERROR_THRESHOLD);
-            if (foundScore == 0u || finalScore < foundScore) {
-                foundScore = finalScore;
-                found = optimalBeingBuilt;
-                found.push_back(newSeq);
-            }
-            else if (finalScore == foundScore) {
-                bool update = false;
-                OptimalQuerySequence newCandidate = optimalBeingBuilt;
-                newCandidate.push_back(newSeq);
-                for (int error = int(BLOCK_ERROR_THRESHOLD)-1; error >= 0; error--) {
-                    uint newCandidateScore = scoreOptimalQuerySequence(newCandidate, error);
-                    uint candidateScore = scoreOptimalQuerySequence(found, error);
-                    if (newCandidateScore < candidateScore) {
-                        update = true;
-                        break;
-                    }
+        //		if (std::includes(seq.begin(), seq.end(), concatenatedOptimalBeingBuilt.begin(), concatenatedOptimalBeingBuilt.end())) {
+        QuerySequence newSeq;
+        std::set_difference(seq.begin(), seq.end(), concatenatedOptimalBeingBuilt.begin(), concatenatedOptimalBeingBuilt.end(), std::back_inserter(newSeq));
+        unsigned int finalScore = currentScore + scoreQuerySequence(newSeq, BLOCK_ERROR_THRESHOLD);
+        if (foundScore == 0u || finalScore < foundScore) {
+            foundScore = finalScore;
+            found = optimalBeingBuilt;
+            found.push_back(newSeq);
+        }
+        else if (finalScore == foundScore) {
+            bool update = false;
+            OptimalQuerySequence newCandidate = optimalBeingBuilt;
+            newCandidate.push_back(newSeq);
+            for (int error = int(BLOCK_ERROR_THRESHOLD)-1; error >= 0; error--) {
+                uint newCandidateScore = scoreOptimalQuerySequence(newCandidate, error);
+                uint candidateScore = scoreOptimalQuerySequence(found, error);
+                if (newCandidateScore < candidateScore) {
+                    update = true;
+                    break;
                 }
-                if (update)
-                    found = std::move(newCandidate);
             }
-//		}
+            if (update)
+                found = std::move(newCandidate);
+        }
+        //		}
     }
 }
 
@@ -303,16 +303,16 @@ OptimalQuerySequence OptimalQuerySequenceBuilder::computeOptimalQuerySequence() 
     for (uint errors = 0; errors <= BLOCK_ERROR_THRESHOLD; errors++)
         optimals.push_back(findOptimalSetOfQuerySequence(errors));
 
-//	int e = 0;
-//	for (SetOfQuerySequence const& set : optimals) {
-//		std::cout << "For errors " << e++ << std::endl;
-//		for (QuerySequence const& q : set) {
-//			std::cout << "Query Sequence:";
-//			for (BlockQuery b : q)
-//				std::cout << "(" << b.blockA << ", " << b.blockB << ") ";
-//			std::cout << std::endl;
-//		}
-//	}
+    //	int e = 0;
+    //	for (SetOfQuerySequence const& set : optimals) {
+    //		std::cout << "For errors " << e++ << std::endl;
+    //		for (QuerySequence const& q : set) {
+    //			std::cout << "Query Sequence:";
+    //			for (BlockQuery b : q)
+    //				std::cout << "(" << b.blockA << ", " << b.blockB << ") ";
+    //			std::cout << std::endl;
+    //		}
+    //	}
 
     OptimalQuerySequence opt;
     unsigned int score = 0u;
@@ -325,8 +325,8 @@ void OptimalQuerySequenceBuilder::generateCppCodeForOptimalQuerySequence() {
     std::cout << "//Paste the code below in the constructor of OptimalQuerySequenceBuilder:" << std::endl;
     std::cout << "#ifndef RNACOMP_COMPUTE_OPTIMAL_QUERY_SEQUENCE" << std::endl;
     std::cout << "static_assert(BLOCK_COUNT == " << BLOCK_COUNT << ", \"The optimal query sequence and the block configuration don't match. "
-                 "Please recompile with RNACOMP_COMPUTE_OPTIMAL_QUERY_SEQUENCE (#define). "
-                 "Then run the program and paste the output in the constructor of OptimalQuerySequenceBuilder.\");" << std::endl;
+                                                                   "Please recompile with RNACOMP_COMPUTE_OPTIMAL_QUERY_SEQUENCE (#define). "
+                                                                   "Then run the program and paste the output in the constructor of OptimalQuerySequenceBuilder.\");" << std::endl;
     std::cout << "#endif" << std::endl;
 
     std::cout << "typedef meta_prog::OptimalQuerySequence<" << std::endl;
@@ -347,4 +347,20 @@ void OptimalQuerySequenceBuilder::generateCppCodeForOptimalQuerySequence() {
         std::cout << std::endl;
     });
     std::cout << "> PrecomputedOptimalQuerySequence;" << std::endl;
+
+    uint x =  0;
+    i = 0;
+
+    std::cout << "Assigner<false> assigner_global(m_queries, m_queryEnds, m_queries_global);" << std::endl;
+    std::cout <<  "typedef meta_prog::QuerySequence<" << std::endl;
+
+    for (; x < BLOCK_COUNT-1 ; x++) {
+        for (i = x + 1 ; i < BLOCK_COUNT ; i++){
+            std::cout << "meta_prog::BlockQuery<" << x << "," << i << ">" << (i==BLOCK_COUNT-1&&x==BLOCK_COUNT-2?"":",") << std::endl;
+        }
+    }
+
+    std::cout << "> QuerySequenceGlobal;" << std::endl;
+    std::cout << "assign_global_sequence<BLOCK_SIZES, QuerySequenceGlobal, QuerySequenceGlobal::size,"<<BLOCK_COUNT-2<<">::assign(assigner_global);" << std::endl;
+
 }

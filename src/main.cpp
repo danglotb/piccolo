@@ -106,6 +106,8 @@ int main(int argc, char const* argv[]) {
 					 "the optimal alignments of the second half of the sequence. Same as running --best on the first half and then on the second half."
 				  << std::endl;
 		std::cout << "\t--all: Prints all acceptable alignments (which have no more than " << BLOCK_ERROR_THRESHOLD << " errors)." << std::endl;
+        std::cout << "\t-l   : Will compute a local (small to large) alignment" << std::endl;
+        std::cout << "\t-g   : Will compute a global alignment" << std::endl;
 		return EXIT_SUCCESS;
 	}
 
