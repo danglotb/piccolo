@@ -81,7 +81,8 @@ protected:
 		 * @param qMeta Meta information associated with the query. Mainly indicates how many nucleotides separate the blocks of the query q.
 		 * @param queryResult The result of the query. Contains the IDs of miRNAs that match our query in the index.
 		 */
-		void processQueryResult(int seq_pos, Query const& query, const QueryMeta& qMeta, QueryResult const& queryResult);
+        template<typename Query_t>
+        void processQueryResult(int seq_pos, Query_t const& query, const QueryMeta& qMeta, QueryResult const& queryResult);
 
 		void displayHumanReadableResult(MiRnaEntry const& sequence, uint from, std::ostream& out) const;
 

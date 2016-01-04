@@ -4,6 +4,8 @@
 #include <string>
 
 #include <sstream>
+#include <tuple>
+#include "QueryMeta.h"
 
 #include "Util.h"
 
@@ -48,6 +50,10 @@ class Query {
 		void advanceTail() { m_tail++; }
 		void setTail(nt const* tail, nt const* tail_end) { m_tail = tail; m_tailEnd = tail_end; }
 
+        std::tuple<bool,bool,bool> unqueriedBlock() const {return std::make_tuple(blockA() != 0u, (blockB() - blockA()) > 1, blockB() != BLOCK_COUNT-1);}
+
+        static const bool global = false;
+
         friend std::ostream& operator<<(std::ostream &os, Query q);
 
 };
@@ -62,6 +68,11 @@ class QueryGlobal : public Query {
     QueryGlobal(BlockId blockA, BlockId blockB, int OffsetA, int OffsetB) : Query(blockA, blockB), m_offsetA(OffsetA), m_offsetB(OffsetB) {}
     int m_offsetA;
     int m_offsetB;
+
+    static const bool global = true;
+
+    std::tuple<bool,bool,bool> unqueriedBlock() const {return std::make_tuple(blockA() != 0u || m_offsetA > 0, (blockB() - blockA()) > 1, blockB() != BLOCK_COUNT-1 || m_offsetB > 0);}
+
     friend std::ostream& operator<<(std::ostream& os, const QueryGlobal& b);
 
 };

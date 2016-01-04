@@ -3,7 +3,7 @@
 
 #include "BlockMeta.h"
 
-#include "Query.h"
+//#include "Query.h"
 
 class QueryMeta {
 
@@ -16,15 +16,15 @@ class QueryMeta {
 		// The number of nt in the middle of the two blocks (the two block excluded)
 		unsigned int blockOffset() const { return m_blockOffset; }
 
-		static bool hasFrontUnqueriedBlock(Query const& q) {
-			return q.blockA() != 0u;
-		}
-		static bool hasMiddleUnqueriedBlock(Query const& q) {
-			return q.blockB() - q.blockA() > 1;
-		}
-		static bool hasTrailingUnqueriedBlock(Query const& q) {
-			return q.blockB() != BLOCK_COUNT-1;
-		}
+//		static bool hasFrontUnqueriedBlock(Query const& q) {
+//                return q.blockA() != 0u;
+//		}
+//		static bool hasMiddleUnqueriedBlock(Query const& q) {
+//			return q.blockB() - q.blockA() > 1;
+//		}
+//		static bool hasTrailingUnqueriedBlock(Query const& q) {
+//			return q.blockB() != BLOCK_COUNT-1;
+//		}
 
 //		unsigned int allowedFrontErrors(Query const& q) const {
 //			return abs(static_cast<int>(BLOCK_OFFSET_AT(q.blockA())) - static_cast<int>(m_blockAOffset));

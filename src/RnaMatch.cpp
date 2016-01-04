@@ -8,33 +8,36 @@ std::vector<nt> RnaMatch::stringToNt(const std::string& seq) {
 }
 
 void RnaMatch::processQuery(int seq_pos, Query const& q, QueryMeta const& qMeta) {
-	processQueryResult(seq_pos, q, qMeta, m_index.search(q));
+    processQueryResult(seq_pos, q, qMeta, m_index.search(q));
 }
 
-void RnaMatch::processQueryResult(int seq_pos, const Query& query, QueryMeta const& qMeta, const QueryResult& queryResult) {
+template<typename Query_t>
+void RnaMatch::processQueryResult(int seq_pos, const Query_t& query, QueryMeta const& qMeta, const QueryResult& queryResult) {
 	if (!queryResult.size())
 		return;
 
-	bool const hasFront = QueryMeta::hasFrontUnqueriedBlock(query);
-	bool const hasMiddle = QueryMeta::hasMiddleUnqueriedBlock(query);
-	bool const hasBack = QueryMeta::hasTrailingUnqueriedBlock(query);
+    std::tuple<bool,bool,bool> unqueriedBlock(query.unqueriedBlock());
+
+    bool const hasFront = std::get<0>(unqueriedBlock);
+    bool const hasMiddle = std::get<1>(unqueriedBlock);
+    bool const hasBack = std::get<2>(unqueriedBlock);
 
 	int const offset = BLOCK_OFFSET_AT(query.blockA());
 	int const maxIndels = std::min((int)BLOCK_ERROR_THRESHOLD, offset);
 	/// BAD == depends on the block (first block = 0 errors)
-	int min_begin_pos = seq_pos - offset - maxIndels;
+    int min_begin_pos = Query_t::global?0:seq_pos - offset - maxIndels;
 	int const max_begin_pos = seq_pos - offset + maxIndels;
 
 	if (max_begin_pos < 0)
 		return;
-	else if (min_begin_pos < 0)
+    else if (min_begin_pos < 0)
 		min_begin_pos = 0;
 
 	AlignmentResult frontResult;
 	AlignmentResult middleResult;
-	AlignmentResult backResult;
+    AlignmentResult backResult;
 
-	for (auto rnaId : queryResult) {
+    for (auto& rnaId : queryResult) {
 		RnaResult& rnaResult = m_results[rnaId];
 		// We already aligned this miRNA on this pos, and the alignment was perfect (i.e. we cannot improve it)
 		if (rnaResult.size() && (rnaResult.back().begin() >= min_begin_pos && rnaResult.back().begin() <= max_begin_pos) && m_minErrorFound == 0u)
@@ -66,17 +69,20 @@ void RnaMatch::processQueryResult(int seq_pos, const Query& query, QueryMeta con
 		else
 			middleResult.clear();
 
-		if (hasFront) {
-			nt const* const front_begin = m_seq_begin + min_begin_pos; // Start
+        if (hasFront) {
+
+            std::cout << "pos " << min_begin_pos << std::endl;
+
+            nt const* const front_begin = m_seq_begin + min_begin_pos; // Start
 			nt const* const front_end = m_seq_begin + seq_pos; // Start of blockA
 
 			frontResult = m_aligner.alignFront(front_begin, front_end, miRnaSeq, miRnaSeq+BLOCK_OFFSET_AT(query.blockA()));
 
-			if (frontResult.errorCount + middleResult.errorCount > m_minErrorFound)
+            if (frontResult.errorCount + middleResult.errorCount > m_minErrorFound)
 				continue;
 
-			frontResult.sequenceLocus.begin += min_begin_pos;
-			frontResult.sequenceLocus.end += min_begin_pos;
+            frontResult.sequenceLocus.begin += min_begin_pos;
+            frontResult.sequenceLocus.end += min_begin_pos;
 			starting_pos = frontResult.sequenceLocus.begin;
 			if (!hasBack && !hasMiddle)
 				end_pos = frontResult.sequenceLocus.end + BLOCK_SIZE_AT(query.blockA()) + miRnaLastBlockSize;
@@ -104,8 +110,9 @@ void RnaMatch::processQueryResult(int seq_pos, const Query& query, QueryMeta con
 			backResult.sequenceLocus.begin += length;
 			backResult.sequenceLocus.end += length;
 			end_pos = backResult.sequenceLocus.end;
-			if (!hasMiddle && !hasFront)
-				starting_pos = seq_pos;
+            if (!hasMiddle && !hasFront) {
+                starting_pos = seq_pos;
+            }
 		}
 		else
 			backResult.clear();
@@ -121,7 +128,7 @@ void RnaMatch::processQueryResult(int seq_pos, const Query& query, QueryMeta con
 		MiRnaAlignmentResult alignResult;
 		alignResult.mergeAlignmentResults(std::move(frontResult), std::move(middleResult), std::move(backResult),
 										  BLOCK_SIZE_AT(query.blockA()), query.blockB() == BLOCK_COUNT-1 ? miRnaLastBlockSize : BLOCK_SIZE_AT(query.blockB()),
-										  starting_pos, end_pos);
+                                          starting_pos, end_pos);
 
 		// We clear the previous suboptimal results
 		if (m_findBest && m_minErrorFound > alignResult.errorCount()) {
@@ -194,7 +201,7 @@ void RnaMatch::match_global(const nt* sequence_begin, const nt* sequence_end) {
 
     for (QueryGlobal b : m_querySequence.m_queries_global) {
 
-        Query q;
+        QueryGlobal q;
         q.setBlockIds(b.blockA(), b.blockB());
 
         for (int j = -b.m_offsetB ; j <= b.m_offsetB ; j++) {
