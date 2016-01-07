@@ -13,8 +13,10 @@
 #include <cstring>
 #include <cstdlib>
 #include <atomic>
+#include <chrono>
+#include <ctime>
 
-#include "IsomirQuerySequence.h"
+//#include "IsomirQuerySequence.h"
 #include "IsomirMatch.h"
 
 using namespace isomir;

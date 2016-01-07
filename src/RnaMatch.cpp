@@ -16,6 +16,7 @@ void RnaMatch::processQueryResult(int seq_pos, const Query_t& query, QueryMeta c
 	if (!queryResult.size())
 		return;
 
+    //In order to get right boolean, which depend of the type Query_t (Query or QueryGlobal)
     std::tuple<bool,bool,bool> unqueriedBlock(query.unqueriedBlock());
 
     bool const hasFront = std::get<0>(unqueriedBlock);
@@ -69,14 +70,16 @@ void RnaMatch::processQueryResult(int seq_pos, const Query_t& query, QueryMeta c
 		else
 			middleResult.clear();
 
+        //In case of Global Alignment, we use alignMiddle
         if (hasFront) {
-
-            std::cout << "pos " << min_begin_pos << std::endl;
 
             nt const* const front_begin = m_seq_begin + min_begin_pos; // Start
 			nt const* const front_end = m_seq_begin + seq_pos; // Start of blockA
 
-			frontResult = m_aligner.alignFront(front_begin, front_end, miRnaSeq, miRnaSeq+BLOCK_OFFSET_AT(query.blockA()));
+            if (Query_t::global)
+                frontResult = m_aligner.alignMiddle(front_begin, front_end, miRnaSeq, miRnaSeq+BLOCK_OFFSET_AT(query.blockA()));
+            else
+                frontResult = m_aligner.alignFront(front_begin, front_end, miRnaSeq, miRnaSeq+BLOCK_OFFSET_AT(query.blockA()));
 
             if (frontResult.errorCount + middleResult.errorCount > m_minErrorFound)
 				continue;
@@ -101,7 +104,11 @@ void RnaMatch::processQueryResult(int seq_pos, const Query_t& query, QueryMeta c
 			if (back_end > m_seq_end)
 				back_end = m_seq_end;
 
-			backResult = m_aligner.alignBack(back_begin, back_end, miRnaSeq_back_begin, miRnaSeq_back_end);
+            //In case of Global Alignment, we use alignMiddle
+            if (Query_t::global)
+                backResult = m_aligner.alignMiddle(back_begin, back_end, miRnaSeq_back_begin, miRnaSeq_back_end);
+            else
+                backResult = m_aligner.alignBack(back_begin, back_end, miRnaSeq_back_begin, miRnaSeq_back_end);
 
 			if (frontResult.errorCount + middleResult.errorCount + backResult.errorCount > m_minErrorFound)
 				continue;
