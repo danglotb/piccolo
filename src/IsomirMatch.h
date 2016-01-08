@@ -20,7 +20,6 @@ class IsomirMatch : public RnaMatch {
 private:
 
     QuerySequence const& _query_seq;
-    std::vector<unsigned int> _indices;
 
 public:
 

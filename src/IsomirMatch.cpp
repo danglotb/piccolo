@@ -39,14 +39,11 @@ void IsomirMatch::match(nt const* seq_beg, nt const* seq_end) {
 
 void IsomirMatch::processQueryResult(nt const* seq_beg, nt const* seq_end,const QueryResult& queryResult) {
     for (auto rnaId : queryResult) {
-        if (std::find(_indices.begin(), _indices.end(), rnaId) == _indices.end()) {//check if we already find this one.
-            _indices.push_back(rnaId);
-            RnaResult& rnaResult = m_results[rnaId];
-            MiRnaEntry const& miRna = m_index.at(rnaId);
-            std::cout << "#" << rnaId << " " << miRna.second << std::endl;
-            MiRnaAlignmentResult r;
-            r.alignment = m_aligner.alignMiddle(seq_beg, seq_end, miRna.second.data(), miRna.second.data() + miRna.second.size());
-            rnaResult.push_back(std::move(r));
-        }
+        RnaResult& rnaResult = m_results[rnaId];
+        MiRnaEntry const& miRna = m_index.at(rnaId);
+        std::cout << "#" << rnaId << " " << miRna.second << std::endl;
+        MiRnaAlignmentResult r;
+        r.alignment = m_aligner.alignMiddle(seq_beg, seq_end, miRna.second.data(), miRna.second.data() + miRna.second.size());
+        rnaResult.push_back(std::move(r));
     }
 }
