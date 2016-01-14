@@ -1,0 +1,10 @@
+Directory one file for reference : ref.fa and test files with 1,2,3 errors used to test the global alignment of piccolo.
+
+ins : insertion
+del : deletion
+mm : mismatch
+mix : mix of the 3 type of errors.
+
+All file finish with the numbers of errors.
+
+/!\ mixing and mismatch errors can provide less errors than expected. 

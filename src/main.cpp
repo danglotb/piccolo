@@ -2,8 +2,8 @@
 
 bool parseParameters(int argc, char const* argv[], Parameters& parameters) {
 	enum { I_OPTION = 0, R_OPTION = 1, O_OPTION = 2 };
-    std::array<char const*, 6> boolOptions({"-h", "--best", "--half", "--all", "-l", "-g"});
-    std::array<bool*, 6> boolOptionsOutput({&parameters.humanReadable, &parameters.best, &parameters.half, &parameters.all, &parameters.local, &parameters.global});
+    std::array<char const*, 7> boolOptions({"-h", "--best", "--half", "--all", "-l", "-g" , "-t2f"});
+    std::array<bool*, 7> boolOptionsOutput({&parameters.humanReadable, &parameters.best, &parameters.half, &parameters.all, &parameters.local, &parameters.global, &parameters.t2f});
 	std::array<char const*, 3> textOptions({"-i", "-r", "-o"});
 	std::array<char const**, 3> textOptionsOutput({&parameters.inputFile, &parameters.referenceFile, &parameters.outputFile});
 	int currentOption = -1;
@@ -44,7 +44,7 @@ bool parseParameters(int argc, char const* argv[], Parameters& parameters) {
 		parameters.outputFile = "-";
 	if (!parameters.best && !parameters.all && !parameters.half)
 		parameters.best = true;
-	return currentOption == -1 && parameters.referenceFile != nullptr;
+    return currentOption == -1 && (parameters.referenceFile != nullptr || parameters.t2f);
 }
 
 void run(RnaDataBase const& sequences, RnaIndex const& index, std::ostream& out, Parameters const& parameters) {
@@ -120,6 +120,25 @@ int main(int argc, char const* argv[]) {
 		return EXIT_SUCCESS;
 	}
 
+
+    // ================================
+    //		Using piccolo to convert tabular data to fasta data
+    // ================================
+
+    if(parameters.t2f) {
+        if (std::strcmp(parameters.inputFile, "-") != 0 && std::strcmp(parameters.outputFile, "-") != 0) {
+            util::tabular2fasta(parameters.inputFile, parameters.outputFile);
+            return EXIT_SUCCESS;
+        } else {
+            std::cout << "You must specify an input file path with -i <in_path> and an output file path with -o <out_path>" << std::endl;
+            return EXIT_FAILURE;
+        }
+    }
+
+    // ================================
+    //		ReferenceFile (DB)
+    // ================================
+
 	RnaIndex index;
 	if (!index.parse(parameters.referenceFile)) {
 		std::cerr << "Unable to parse reference file." << std::endl;
@@ -132,7 +151,7 @@ int main(int argc, char const* argv[]) {
 	std::streambuf* inputBuffer;
     std::ifstream inputFileStream;
 
-	if (std::strcmp(parameters.inputFile, "-") != 0) {
+    if (std::strcmp(parameters.inputFile, "-") != 0) {
 		inputFileStream.open(parameters.inputFile);
 		inputBuffer = inputFileStream.rdbuf();
 	}

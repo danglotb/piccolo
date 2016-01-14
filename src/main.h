@@ -23,7 +23,7 @@ using namespace isomir;
 
 struct Parameters {
 		char const* inputFile, *referenceFile, *outputFile;
-        bool humanReadable, best, half, all, local, global;
+        bool humanReadable, best, half, all, local, global, t2f;
 
 		Parameters() : inputFile(nullptr), referenceFile(nullptr), outputFile(nullptr), humanReadable(false), best(false),
 			half(false), all(false) {}
