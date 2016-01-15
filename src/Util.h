@@ -6,7 +6,6 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
-#include <sstream>
 
 //typedef unsigned char nt;
 typedef unsigned int BlockId;
@@ -39,8 +38,6 @@ namespace util {
 	std::string ntToString(const std::vector<nt>& seq);
 
 	BlockHash hash(nt const* begin, nt const* end);
-
-    void tabular2fasta(const char* in_path, const char* out_path);
 
 	template <class T>
 	void insert(std::vector<T>& vec, T val) {

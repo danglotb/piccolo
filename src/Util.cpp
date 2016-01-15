@@ -35,34 +35,6 @@ char util::ntToAscii(nt n) {
     }
 }
 
-void util::tabular2fasta(const char* in_path, const char* out_path) {
-    std::ifstream in_file(in_path, std::ios_base::in);
-    std::ofstream out_file(out_path);
-
-    std::string line;
-    if (in_file.is_open() && out_file.is_open()) {
-
-        //RemoveHeader, we do not care about it (3 lines)
-        getline(in_file,line);
-        getline(in_file,line);
-        getline(in_file,line);
-
-        while ( getline(in_file,line) ) {
-            std::vector<std::string> elems;
-            std::stringstream ss(line);
-            std::string item;
-            while (std::getline(ss, item, '\t'))
-                elems.push_back(item);
-            out_file << ">" << elems.at(0) << " | " << elems.at(1) << std::endl;
-            out_file << elems.at(0) << std::endl;
-        }
-        in_file.close();
-        out_file.close();
-    } else
-        std::cout << "Unable to open file";
-
-}
-
 BlockHash util::hash(nt const* begin, nt const* end) {
     BlockHash h = 0u;
     while (begin != end) {

@@ -44,10 +44,13 @@ class RnaAlignment {
 		};
 
 		std::vector<AlignmentScore> m_alignMatrix;
-		typedef std::size_t RnaIndex;
-		typedef std::size_t SequenceIndex;
+//		typedef std::size_t RnaIndex;
+//		typedef std::size_t SequenceIndex;
 
-		SequenceIndex /*const*/ m_sequenceLength;
+        typedef unsigned long RnaIndex;
+        typedef unsigned long SequenceIndex;
+
+        SequenceIndex /*const*/ m_sequenceLength;
 		RnaIndex /*const*/ m_miRnaLength;
 
 		AlignmentScore* scanSequenceRow(RnaIndex rnaId) { return m_alignMatrix.data() + m_sequenceLength*rnaId; }
@@ -66,9 +69,9 @@ class RnaAlignment {
 		}
 
 		void processScore(RnaIndex rnaId, SequenceIndex seqId, nt rnaNt, nt seqNt) {
-			if (rnaNt == seqNt)
-				at(rnaId, seqId) = AlignmentScore(at(rnaId-1, seqId-1).score, Operation::Match);
-			else {
+            if (rnaNt == seqNt)
+                at(rnaId, seqId) = AlignmentScore(at(rnaId-1, seqId-1).score, Operation::Match);
+            else {
 				int subs = at(rnaId-1, seqId-1).score+1;
 				int insertion = at(rnaId-1, seqId).score+1;
 				int deletion = at(rnaId, seqId-1).score+1;
