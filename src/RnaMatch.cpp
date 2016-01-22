@@ -138,6 +138,8 @@ void RnaMatch::processQueryResult(int seq_pos, const Query_t& query, QueryMeta c
             std::for_each(m_results.begin(), m_results.end(), [](RnaResult& r) { r.clear(); });
         }
 
+        nbAligned++;
+
         rnaResult.push_back(std::move(alignResult));
     }
 }
@@ -228,7 +230,6 @@ void RnaMatch::match_global(const nt* sequence_begin, const nt* sequence_end) {
             }
         }
     }
-
 }
 
 void RnaMatch::match_small_in_large(const nt* sequence_begin, const nt* sequence_end, bool best) {
@@ -239,7 +240,6 @@ void RnaMatch::match_small_in_large(const nt* sequence_begin, const nt* sequence
     m_seq_begin = sequence_begin;
     m_seq_end = sequence_end;
     m_findBest = best;
-
 
     // Process the first nt
     for (QueryBuilder& q : m_querySequence) {

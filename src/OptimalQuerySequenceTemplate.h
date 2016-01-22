@@ -750,6 +750,7 @@ public:
   *
   */
 
+//Add the Block itSelf to the list, with good offset build by assign_global
 template< class BlockQuery_t, int OffsetA, int OffsetB>
 struct assign_global_exec {
 public:
@@ -759,6 +760,7 @@ public:
     }
 };
 
+//Loop for 1 blockQuery : computing all offset
 template<class BlockMeta_t, class BlockQuery_t, unsigned int k>
 struct assign_global {
 private:
@@ -799,6 +801,7 @@ public:
     static void assign(Assigner_t&) {}
 };
 
+//Start Building request
 template<class BlockMeta_t, class QuerySequence_t, unsigned int size, unsigned int k>
 struct assign_global_sequence {
 

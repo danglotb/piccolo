@@ -48,8 +48,6 @@ bool parseParameters(int argc, char const* argv[], Parameters& parameters) {
 }
 
 void run(RnaDataBase const& sequences, RnaIndex const& index, std::ostream& out, Parameters const& parameters) {
-    std::chrono::time_point<std::chrono::system_clock> start, end;
-    start = std::chrono::system_clock::now();
 
     RnaMatch matcher(index);
 
@@ -90,11 +88,6 @@ void run(RnaDataBase const& sequences, RnaIndex const& index, std::ostream& out,
             }
 		}
 	}
-    end = std::chrono::system_clock::now();
-
-    std::chrono::duration<double> elapsed_seconds = end-start;
-
-    std::cout  << "elapsed time with construction of index: " << elapsed_seconds.count() << " s" << std::endl;
 }
 
 int main(int argc, char const* argv[]) {
