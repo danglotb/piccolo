@@ -37,7 +37,7 @@ char util::ntToAscii(nt n) {
 
 BlockHash util::hash(nt const* begin, nt const* end) {
     BlockHash h = 0u;
-    while (begin != end) {
+    while (begin < end) {
         h <<= 2;
         h |= (unsigned char)*begin;
         ++begin;

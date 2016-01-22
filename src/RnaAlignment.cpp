@@ -7,7 +7,7 @@ void RnaAlignment::backTrack(AlignmentResult& result, RnaAlignment::RnaIndex rna
 	result.sequenceLocus.begin = 0u;
 	result.sequenceLocus.end = seqId;
 	result.errorCount = at(rnaId, seqId).score;
-	while (rnaId > 0u || seqId > 0u) {
+    while (rnaId > 0u || seqId > 0u) {
 		Operation op = at(rnaId, seqId).operation;
 		result.operations.push_front(op);
 		switch (op) {
@@ -34,7 +34,8 @@ AlignmentResult RnaAlignment::alignMiddle(const nt* seq, nt const* seqEnd, const
 	initMatrix();
 
 	RnaIndex const rnaIdEnd = knownMiRnaEnd - knownMiRna;
-	SequenceIndex const seqIdEnd = seqEnd - seq;
+
+    SequenceIndex const seqIdEnd = seqEnd - seq;
 
 	nt const* miRnaSeq = knownMiRna;
 

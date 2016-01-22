@@ -17,7 +17,7 @@ void RnaMatch::processQueryResult(int seq_pos, const Query_t& query, QueryMeta c
         return;
 
     //In order to get right boolean, which depend of the type Query_t (Query or QueryGlobal)
-    std::tuple<bool,bool,bool> unqueriedBlock(query.unqueriedBlock());
+    std::tuple<bool,bool,bool> unqueriedBlock = (query.unqueriedBlock());
 
     bool const hasFront = std::get<0>(unqueriedBlock);
     bool const hasMiddle = std::get<1>(unqueriedBlock);
@@ -54,6 +54,7 @@ void RnaMatch::processQueryResult(int seq_pos, const Query_t& query, QueryMeta c
         if (hasMiddle) {
             nt const* const middle_begin = m_seq_begin + seq_pos + BLOCK_SIZE_AT(query.blockA()); // End of blockA
             nt const* const middle_end = middle_begin + qMeta.blockOffset(); // Start of block B
+
             middleResult = m_aligner.alignMiddle(middle_begin, middle_end, miRnaSeq+BLOCK_OFFSET_END_AT(query.blockA()),
                                                  miRnaSeq+BLOCK_OFFSET_AT(query.blockB()));
             if (middleResult.errorCount > m_minErrorFound)
@@ -95,13 +96,14 @@ void RnaMatch::processQueryResult(int seq_pos, const Query_t& query, QueryMeta c
             nt const* miRnaSeq_back_begin = miRnaSeq + BLOCK_OFFSET_END_AT(query.blockB());
             nt const* miRnaSeq_back_end = miRnaSeq + miRna.second.size();
 
-            nt const* const back_begin = m_seq_begin + seq_pos + BLOCK_SIZE_AT(query.blockA()) +
-                    qMeta.blockOffset() + BLOCK_SIZE_AT(query.blockB()); // End of blockB
+            nt const* const back_begin = m_seq_begin +(seq_pos + BLOCK_SIZE_AT(query.blockA()) +
+                                                       qMeta.blockOffset() + BLOCK_SIZE_AT(query.blockB())); // End of blockB
+
             nt const* back_end = back_begin + (miRnaSeq_back_end-miRnaSeq_back_begin) + BLOCK_ERROR_THRESHOLD - (frontResult.errorCount + middleResult.errorCount);
             if (back_end > m_seq_end)
                 back_end = m_seq_end;
 
-            backResult = Query_t::global?m_aligner.alignMiddle(back_begin, back_end, miRnaSeq_back_begin, miRnaSeq_back_end):
+            backResult = Query_t::global?m_aligner.alignMiddle(std::min(m_seq_end,back_begin), m_seq_end, miRnaSeq_back_begin, miRnaSeq_back_end):
                                          m_aligner.alignBack(back_begin, back_end, miRnaSeq_back_begin, miRnaSeq_back_end);
 
             if (frontResult.errorCount + middleResult.errorCount + backResult.errorCount > m_minErrorFound)
@@ -117,7 +119,6 @@ void RnaMatch::processQueryResult(int seq_pos, const Query_t& query, QueryMeta c
         }
         else
             backResult.clear();
-
 
         // If we already aligned this
         if (!Query_t::global && rnaResult.size() &&
@@ -200,6 +201,8 @@ void RnaMatch::match_global(const nt* sequence_begin, const nt* sequence_end) {
     m_seq_end = sequence_end;
     m_findBest = false;
 
+    unsigned int size_seq = m_seq_end - m_seq_begin;
+
     for (QueryGlobal b : m_querySequence.m_queries_global) {
 
         QueryGlobal q;
@@ -208,10 +211,18 @@ void RnaMatch::match_global(const nt* sequence_begin, const nt* sequence_end) {
         for (int j = -b.m_offsetB ; j <= b.m_offsetB ; j++) {
             for (int e = -b.m_offsetA ; e <= b.m_offsetA; e++) {
 
-                q.setBlockHash(util::hash(sequence_begin+(b.blockA()*BLOCK_SIZE_AT(b.blockA())+e), sequence_begin+((b.blockA()+1)*BLOCK_SIZE_AT(b.blockA())+e)),
-                               util::hash(sequence_begin+(b.blockB()*BLOCK_SIZE_AT(b.blockB())+j+e), sequence_begin+((b.blockB()+1)*BLOCK_SIZE_AT(b.blockB())+j+e)));
+                q.m_offsetA = e;
+                q.m_offsetB = j;
 
-                unsigned int offsetMeta =  (b.blockB()*BLOCK_SIZE_AT(b.blockB())+j) - (b.blockA()+1)*BLOCK_SIZE_AT(b.blockA());
+                unsigned int blockA_beg = b.blockA()*BLOCK_SIZE_AT(b.blockA())+e;
+                unsigned int blockA_end = (b.blockA()+1)*BLOCK_SIZE_AT(b.blockA())+e;
+                unsigned int blockB_beg = std::min(b.blockB()*BLOCK_SIZE_AT(b.blockA())+j+e, size_seq);
+                unsigned int blockB_end = std::min((b.blockB()+1)*BLOCK_SIZE_AT(b.blockA())+j+e, size_seq);
+
+                q.setBlockHash(util::hash(sequence_begin + blockA_beg, sequence_begin + blockA_end),
+                               util::hash(sequence_begin + blockB_beg, sequence_begin + blockB_end));
+
+                unsigned int offsetMeta =  (b.blockB()*BLOCK_SIZE_AT(b.blockA())+j) - (b.blockA()+1)*BLOCK_SIZE_AT(b.blockA());
 
                 processQueryResult((b.blockA()*BLOCK_SIZE_AT(b.blockA())+e) , q, QueryMeta(offsetMeta), m_index.search(q));
             }
