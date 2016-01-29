@@ -44,4 +44,4 @@ CONFIG += c++11
 
 #QMAKE_CXXFLAGS_DEBUG += -gdwarf-3
 #QMAKE_CXXFLAGS_DEBUG += -g
-QMAKE_CXXFLAGS += -std=c++11 #-O3-msse -msse2 -msse3 -march=amd64 -mfpmath=sse
+QMAKE_CXXFLAGS += -std=c++11 -O3 -msse3

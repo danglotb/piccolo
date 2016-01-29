@@ -13,6 +13,12 @@
 #include "Util.h"
 #include "RnaMatch.h"
 
+/**
+ *
+ *  NOT USED ANYMORE
+ *
+ */
+
 namespace isomir {
 
 class IsomirMatch : public RnaMatch {

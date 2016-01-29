@@ -6,6 +6,12 @@
 #include <vector>
 #include <sstream>
 
+/**
+ *
+ *  NOT USED ANYMORE
+ *
+ */
+
 namespace isomir {
 
 class BlockQuery {
