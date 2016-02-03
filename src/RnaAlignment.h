@@ -59,6 +59,8 @@ class RnaAlignment {
 		AlignmentScore& at(RnaIndex rnaId, SequenceIndex seqId) { return m_alignMatrix[m_sequenceLength*rnaId+seqId]; }
 		AlignmentScore at(RnaIndex rnaId, SequenceIndex seqId) const { return m_alignMatrix[m_sequenceLength*rnaId+seqId]; }
 
+        unsigned int nbIndel;
+
 		void backTrack(AlignmentResult& result, RnaIndex rnaId, SequenceIndex seqId);
 
 		void initMatrix() {
@@ -66,6 +68,7 @@ class RnaAlignment {
 				*it = AlignmentScore(it - begin, Operation::Deletion);
 			for (RnaIndex i = 1u; i < m_miRnaLength; i++)
 				at(i, 0) = AlignmentScore(i, Operation::Insertion);
+            nbIndel = 0;
 		}
 
 		void processScore(RnaIndex rnaId, SequenceIndex seqId, nt rnaNt, nt seqNt) {
@@ -134,6 +137,8 @@ class RnaAlignment {
 		RnaAlignment(RnaAlignment&&) = default;
 
 		RnaAlignment& operator=(RnaAlignment&&) = default;
+
+        unsigned int getnbIndel(){return nbIndel;}
 
 		AlignmentResult alignMiddle(nt const* seq, nt const* seqEnd, nt const* knownMiRna, nt const* knownMiRnaEnd);
 

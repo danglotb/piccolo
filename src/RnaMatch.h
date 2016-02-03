@@ -30,9 +30,10 @@ protected:
 		 * @param q The query. Contains the IDs of the two blocks, and their hash values.
 		 * @param qMeta Meta information associated with the query. Mainly indicates how many nucleotides separate the blocks of the query q.
 		 */
-		void processQuery(int seq_pos, Query const& q, QueryMeta const& qMeta);
+        void processQuery(int seq_pos, Query const& q, QueryMeta const& qMeta);
 
 	public:
+
         struct MiRnaAlignmentResult {
 //				unsigned int errorCount = 0u;
 //				int sequenceBegin = 0;
@@ -64,15 +65,17 @@ protected:
 
 		typedef std::vector<MiRnaAlignmentResult> RnaResult;
 
+        unsigned int nbAligned = 0;
+        bool isAligned = false;
+
     protected:
-		std::vector<RnaResult> m_results; // one entry per mi rna
+        std::vector<RnaResult> m_results; // one entry per mi rna
 		unsigned int m_minErrorFound;
 		nt const* m_seq_begin;
 		nt const* m_seq_end;
 		RnaAlignment m_aligner;
-		bool m_findBest = true;
-        unsigned int nbAligned = 0;
-
+        bool m_findBest = true;
+        const unsigned int m_nbIndel;
 		void reset(std::size_t sequence_size, RnaIndex const& new_index);
 
 		/**

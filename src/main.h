@@ -22,11 +22,13 @@
 using namespace isomir;
 
 struct Parameters {
-		char const* inputFile, *referenceFile, *outputFile;
+
+        char const* inputFile, *referenceFile, *outputFile;
         bool humanReadable, best, half, all, local, global;
+        unsigned int erreur;
 
 		Parameters() : inputFile(nullptr), referenceFile(nullptr), outputFile(nullptr), humanReadable(false), best(false),
-			half(false), all(false) {}
+            half(false), all(false) , erreur(BLOCK_ERROR_THRESHOLD) {}
 };
 
 bool parseParameters(int argc, char const* argv[], Parameters& parameters);

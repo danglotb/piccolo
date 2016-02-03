@@ -13,9 +13,11 @@ void RnaAlignment::backTrack(AlignmentResult& result, RnaAlignment::RnaIndex rna
 		switch (op) {
 			case Operation::Deletion:
 				seqId--;
-				break;
+                nbIndel++;
+                break;
 			case Operation::Insertion:
 				rnaId--;
+                nbIndel++;
 				break;
 			default:
 				seqId--;

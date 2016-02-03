@@ -1,0 +1,19 @@
+
+MirbaseFile.fa : fichier database (4024)
+
+GSM518430-13540.fa : MiRNA du fichier tabulaire sous format fasta (1m6)
+
+alea_3err_Mirbase.fa : mix entre séquences aléatoires et séquence du fichier MirbaseFile.fa (494) construit comme suit:
+	-1 sequence Mirbase avec trois erreurs (ou moins).
+	-10 sequences aléatoires
+
+	cette opération est répétée 15 fois pour chacunes des tailles de séquences : 19, 20, 21, 22.
+
+rnd.fa : fichier de 1m séquences aléatoires, avec 250k séquences de chaques tailles : 19, 20, 21, 22.
+
+Résultats d'alignement : 
+	GSM518430-13540.fa	2469 / 1613411	(0.15%)
+	alea_3rr_Mirbase.fa	41 / 494	(8.3%)
+	rnd.fa			108 / 1000000	(0.011%)
+
+

@@ -57,7 +57,7 @@ void RnaMatch::processQueryResult(int seq_pos, const Query_t& query, QueryMeta c
 
             middleResult = m_aligner.alignMiddle(middle_begin, middle_end, miRnaSeq+BLOCK_OFFSET_END_AT(query.blockA()),
                                                  miRnaSeq+BLOCK_OFFSET_AT(query.blockB()));
-            if (middleResult.errorCount > m_minErrorFound)
+            if (middleResult.errorCount > m_minErrorFound ||  m_aligner.getnbIndel() > m_nbIndel)
                 continue;
 
             // We update the putative seq positions
@@ -79,7 +79,7 @@ void RnaMatch::processQueryResult(int seq_pos, const Query_t& query, QueryMeta c
             frontResult = Query_t::global?m_aligner.alignMiddle(front_begin, front_end, miRnaSeq, miRnaSeq+BLOCK_OFFSET_AT(query.blockA())):
                                           m_aligner.alignFront(front_begin, front_end, miRnaSeq, miRnaSeq+BLOCK_OFFSET_AT(query.blockA()));
 
-            if (frontResult.errorCount + middleResult.errorCount > m_minErrorFound)
+            if (frontResult.errorCount + middleResult.errorCount > m_minErrorFound ||  m_aligner.getnbIndel() > m_nbIndel)
                 continue;
 
             frontResult.sequenceLocus.begin += min_begin_pos;
@@ -106,7 +106,7 @@ void RnaMatch::processQueryResult(int seq_pos, const Query_t& query, QueryMeta c
             backResult = Query_t::global?m_aligner.alignMiddle(std::min(m_seq_end,back_begin), m_seq_end, miRnaSeq_back_begin, miRnaSeq_back_end):
                                          m_aligner.alignBack(back_begin, back_end, miRnaSeq_back_begin, miRnaSeq_back_end);
 
-            if (frontResult.errorCount + middleResult.errorCount + backResult.errorCount > m_minErrorFound)
+            if (frontResult.errorCount + middleResult.errorCount + backResult.errorCount > m_minErrorFound || m_aligner.getnbIndel() > m_nbIndel)
                 continue;
 
             uint const length = back_begin - m_seq_begin;
@@ -139,6 +139,7 @@ void RnaMatch::processQueryResult(int seq_pos, const Query_t& query, QueryMeta c
         }
 
         nbAligned++;
+        isAligned=true;
 
         rnaResult.push_back(std::move(alignResult));
     }
@@ -186,7 +187,9 @@ void RnaMatch::displayExonerateResult(const MiRnaEntry& sequence, uint from, std
     }
 }
 
-RnaMatch::RnaMatch(const RnaIndex& index) : m_index(index) {}
+RnaMatch::RnaMatch(const RnaIndex& index) : m_index(index), m_nbIndel(BLOCK_ERROR_THRESHOLD) {}
+
+RnaMatch::RnaMatch(const RnaIndex& index, unsigned int nbIndel) : m_index(index), m_nbIndel(nbIndel) {}
 
 void RnaMatch::match(const std::vector<nt>& sequence, bool best, bool global) {
     if (global)

@@ -1,0 +1,988 @@
+>osa-miR2121a MIMAT0011180 Oryza sativa miR2121a | osa-miR2121b MIMAT0011181 Oryza sativa miR2121b | 
+AAAACGGAGCCGTCCATTAGCGCG
+>360|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	359
+ctctgttttagcaaggcat
+>361|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	360
+cctgggactattatgatct
+>362|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	361
+tagtcttggctaccgatat
+>363|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	362
+aggtcgtattccctattag
+>364|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	363
+ccaatggttattgtcagct
+>365|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	364
+ctactgaagccgttttgta
+>366|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	365
+agctaaggtcttttcatcg
+>367|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	366
+cagcatcatttctgttgga
+>368|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	367
+tatagtactttccgcagtg
+>369|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	368
+gtcctatcagtatagcgtt
+>bdi-miR7752-3p MIMAT0030245 Brachypodium distachyon miR7752-3p | 
+AAAATGGATAGGTTGGGAGGAACACGC
+>679|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	678
+tatttgagattgaccgctc
+>680|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	679
+gggaccttcatatgtttca
+>681|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	680
+ctcgctgatgcatattgat
+>682|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	681
+tatctttctagcagggact
+>683|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	682
+aatttcgctgggctttcaa
+>684|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	683
+atctattgctggttcacga
+>685|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	684
+aatgagccgtgtttatcct
+>686|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	685
+gtgactcgcatgtattact
+>687|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	686
+cggcctttatttgagtaac
+>688|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	687
+actagctatttccgggtta
+>rgl-miR5139 MIMAT0020650 Rehmannia glutinosa miR5139 | 
+AAACCTGGCTATGATAUCCA
+>770|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	769
+tgctcggatactacatgtt
+>771|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	770
+acgagtctcgattattcgt
+>772|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	771
+tcccgcatatagttgtagt
+>773|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	772
+gatctctctttcggtaaag
+>774|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	773
+cgttatgctagtctagtac
+>775|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	774
+gtcctctgtgttaagcata
+>776|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	775
+tcagtcagcggtttattac
+>777|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	776
+aggtttattaccctgagct
+>778|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	777
+tttagtgatgcccacttga
+>779|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	778
+ctgtcaactctgttgtgaa
+>osa-miR5487 MIMAT0022120 Oryza sativa miR5487 | 
+ACAGATGTGATGTAGTUCCG
+>938|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	937
+ctgctatccagttatgatg
+>939|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	938
+tcatctatcggaacgtttg
+>940|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	939
+aagattgcgcttttctagc
+>941|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	940
+gagctagtttttacgcact
+>942|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	941
+cgcactgtgtacatgattt
+>943|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	942
+ggagctcttatctcattga
+>944|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	943
+ggttaagttttgccacatc
+>945|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	944
+gtcctagtagcctattagt
+>946|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	945
+gaatattgtggtcccttac
+>947|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	946
+gttgcctttatcgactaga
+>mtr-miR5269a MIMAT0021293 Medicago truncatula miR5269a | 
+AAAGTGGUTGGAAAACATTGATT
+>957|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	956
+ctcttcgtagatataggtc
+>958|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	957
+ctcgtagggaaattttcct
+>959|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	958
+ggcttgctatttagtccaa
+>960|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	959
+accagattctttggtgcta
+>961|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	960
+ccatagtaagtcgtgtttc
+>962|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	961
+tggttatgattcccgtaac
+>963|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	962
+tcgtcggtactcatttaga
+>964|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	963
+catatgtacctattctggg
+>965|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	964
+tgtaacatttcgcgtagct
+>966|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	965
+gtctaatttgggcacttac
+>osa-miR437 MIMAT0001586 Oryza sativa miR437 | sbi-miR437a MIMAT0011362 Sorghum bicolor miR437a | sbi-miR437b MIMAT0011363 Sorghum bicolor miR437b | sbi-miR437c MIMAT0011364 Sorghum bicolor miR437c | sbi-miR437d MIMAT0011365 Sorghum bicolor miR437d | sbi-miR437e MIMAT0011366 Sorghum bicolor miR437e | sbi-miR437f MIMAT0011367 Sorghum bicolor miR437f | sbi-miR437g MIMAT0011368 Sorghum bicolor miR437g | sbi-miR437i MIMAT0011369 Sorghum bicolor miR437i | sbi-miR437j MIMAT0011370 Sorghum bicolor miR437j | sbi-miR437k MIMAT0011371 Sorghum bicolor miR437k | sbi-miR437l MIMAT0011372 Sorghum bicolor miR437l | sbi-miR437m MIMAT0011373 Sorghum bicolor miR437m | sbi-miR437n MIMAT0011374 Sorghum bicolor miR437n | sbi-miR437o MIMAT0011375 Sorghum bicolor miR437o | sbi-miR437p MIMAT0011376 Sorghum bicolor miR437p | sbi-miR437q MIMAT0011377 Sorghum bicolor miR437q | sbi-miR437r MIMAT0011378 Sorghum bicolor miR437r | sbi-miR437s MIMAT0011379 Sorghum bicolor miR437s | sbi-miR437t MIMAT0011380 Sorghum bicolor miR437t | sbi-miR437u MIMAT0011381 Sorghum bicolor miR437u | sbi-miR437v MIMAT0011382 Sorghum bicolor miR437v | sbi-miR437w MIMAT0011383 Sorghum bicolor miR437w | ssp-miR437a MIMAT0020280 Saccharum ssp. miR437a | 
+CAAGTTAGAGAAGTTTGAUCTA
+>1175|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1174
+ttgtcggagactcatactt
+>1176|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1175
+gattcgtttaatccgcgta
+>1177|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1176
+ggtcaatcatctatcgttg
+>1178|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1177
+tgtctcgggctcatattaa
+>1179|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1178
+catatagatttttccgggc
+>1180|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1179
+cacttcagggatttgtatc
+>1181|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1180
+tcatgttttgactgcgaca
+>1182|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1181
+ataccttggtcaagttgct
+>1183|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1182
+taactgactaggttgtctc
+>1184|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1183
+tcatatgatctgcagtcgt
+>bdi-miR7764-3p MIMAT0030275 Brachypodium distachyon miR7764-3p | 
+AAATAGACTTGGCGTTCTCGG
+>1564|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1563
+cggaagtgttattctcatc
+>1565|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1564
+cgacggttaacattcttgt
+>1566|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1565
+attgcttcgcaagagtctt
+>1567|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1566
+gtttacagtgacattgtcc
+>1568|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1567
+caaatattcctgcggtgtt
+>1569|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1568
+gtgcctacaggttcatatt
+>1570|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1569
+cttgtaacgaacttggctt
+>1571|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1570
+acattttggcgagctctta
+>1572|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1571
+tattctcagcgcagtttag
+>1573|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1572
+attgacttgtctggatcca
+>mtr-miR2592b-3p MIMAT0013268 Medicago truncatula miR2592b-3p | mtr-miR2592c MIMAT0013269 Medicago truncatula miR2592c | mtr-miR2592d-3p MIMAT0013270 Medicago truncatula miR2592d-3p | mtr-miR2592e-3p MIMAT0013271 Medicago truncatula miR2592e-3p | mtr-miR2592f MIMAT0013272 Medicago truncatula miR2592f | mtr-miR2592i MIMAT0013273 Medicago truncatula miR2592i | mtr-miR2592j MIMAT0013274 Medicago truncatula miR2592j | mtr-miR2592o-3p MIMAT0013275 Medicago truncatula miR2592o-3p | mtr-miR2592p MIMAT0013276 Medicago truncatula miR2592p | mtr-miR2592q-3p MIMAT0013277 Medicago truncatula miR2592q-3p | mtr-miR2592r MIMAT0013278 Medicago truncatula miR2592r | mtr-miR2592a.2-3p MIMAT0013349 Medicago truncatula miR2592a.2-3p | mtr-miR2592g MIMAT0013350 Medicago truncatula miR2592g | mtr-miR2592h MIMAT0013351 Medicago truncatula miR2592h | mtr-miR2592k MIMAT0013352 Medicago truncatula miR2592k | mtr-miR2592l MIMAT0013353 Medicago truncatula miR2592l | mtr-miR2592m MIMAT0013354 Medicago truncatula miR2592m | mtr-miR2592n MIMAT0013355 Medicago truncatula miR2592n | mtr-miR2592an MIMAT0021170 Medicago truncatula miR2592an | mtr-miR2592ao MIMAT0021171 Medicago truncatula miR2592ao | mtr-miR2592bo-3p MIMAT0030008 Medicago truncatula miR2592bo-3p | mtr-miR2592bp-5p MIMAT0030009 Medicago truncatula miR2592bp-5p | mtr-miR2592br-3p MIMAT0030014 Medicago truncatula miR2592br-3p | 
+AAATGCTCGAGTCCTGTGGUT
+>1815|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1814
+gtgttgtatgtcacactca
+>1816|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1815
+tttagttgacccgttcaag
+>1817|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1816
+atgccttagttctgagtac
+>1818|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1817
+gtctttttggtaacgccaa
+>1819|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1818
+tttcagctctgatagagct
+>1820|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1819
+gcctttacttgtcaagtag
+>1821|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1820
+cgttgacaagttcttgact
+>1822|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1821
+ttcgtccttggatatagac
+>1823|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1822
+agtatcgttttcggccaat
+>1824|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	1823
+ccattgttcgacttaatgg
+>osa-miR5522 MIMAT0022156 Oryza sativa miR5522 | 
+ACAATAGAATGGAAGGCAT
+>2135|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2134
+tacgttaatgcattcgctg
+>2136|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2135
+tgcaagccgtttctgtaat
+>2137|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2136
+caatgtgctactgtagctt
+>2138|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2137
+tcgtttgcgctcagaatat
+>2139|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2138
+cgtttgtcgaatttacacg
+>2140|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2139
+tacatgtgtattggccact
+>2141|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2140
+tttgttccagagcactatg
+>2142|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2141
+ttattcctgagatgtgacc
+>2143|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2142
+agtaagttccctggatttc
+>2144|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2143
+ttccagatttgggattcca
+>osa-miR415 MIMAT0001331 Oryza sativa miR415 | 
+AACAAAACAGAAGCACGAUCAG
+>2291|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2290
+ttcacggattttagtgacc
+>2292|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2291
+atgtatgacccatgtgctt
+>2293|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2292
+ttaacaattctcgtggcgt
+>2294|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2293
+tgttagaagtccgatttcc
+>2295|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2294
+gtcttaacatcttggtgac
+>2296|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2295
+ctcgctatttgtatgaagc
+>2297|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2296
+tattgtatccactgggtac
+>2298|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2297
+cctaatgagttctgttcag
+>2299|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2298
+atgatttgatcgcctgcta
+>2300|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2299
+cgtttagtttatcccgaag
+>stu-miR5303h MIMAT0031243 Solanum tuberosum miR5303h | 
+AAACATTUTTGAAGUGTCTGAGCAA
+>2485|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2484
+tatccggatattcttagcg
+>2486|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2485
+acgtgactctcttgatatg
+>2487|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2486
+actcgtattgcgacagttt
+>2488|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2487
+accgaggtcttatctttga
+>2489|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2488
+atttttcattggcccgaag
+>2490|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2489
+gagtttgtcacttcaagtc
+>2491|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2490
+ttgtacaccatatcgtggt
+>2492|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2491
+aggcactgttcatttgact
+>2493|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2492
+ggtgtagcaattctattcc
+>2494|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2493
+cttaatggattgacgtcct
+>ppe-miR6288c-3p MIMAT0031566 Prunus persica miR6288c-3p | 
+AACAAGTTAGAAAATAACAAGTG
+>2511|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2510
+aacttcgcgtttgctgata
+>2512|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2511
+gtgtcctagattctaatcg
+>2513|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2512
+ttgctttacgtaagccagt
+>2514|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2513
+caccagttcttaattggtg
+>2515|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2514
+ttatcacagatctgggtct
+>2516|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2515
+ttttgatataggccacctg
+>2517|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2516
+ctaagtgactattttccgg
+>2518|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2517
+tttatctgacatggcctag
+>2519|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2518
+tagtattgcttcaccggat
+>2520|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2519
+ccatagctgcttgtatagt
+>osa-miR7694-5p MIMAT0029959 Oryza sativa miR7694-5p | 
+ACCTAGTACTGGCTTAGCACCA
+>2529|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2528
+tattattggccgcctgtaa
+>2530|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2529
+cgctgttagctattctaag
+>2531|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2530
+ccttggctttacagttaag
+>2532|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2531
+ctgagttacgtacctttga
+>2533|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2532
+gttaatgatagtctctgcc
+>2534|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2533
+ggtgctttaaaatctctcg
+>2535|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2534
+agtgatcgtttctcacatg
+>2536|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2535
+ctgtgctattctaacgtag
+>2537|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2536
+gtgtccttctataacaggt
+>2538|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2537
+tagcccagctggtttatta
+>gma-miR1520i MIMAT0018257 Glycine max miR1520i | 
+AACGTACACGTCACGGTCAACA
+>2568|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2567
+gcgtgtgactttttcaaac
+>2569|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2568
+atgtcagttacgacttgtc
+>2570|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2569
+tattgattacccgagttcg
+>2571|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2570
+aggttctcggaatcattct
+>2572|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2571
+tgttaacattgagttcccg
+>2573|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2572
+actatgtcttaggtctagc
+>2574|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2573
+cgtttgcttccaaattgga
+>2575|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2574
+acggtgttagcttcattca
+>2576|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2575
+ctttctgggccatagatat
+>2577|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	2576
+ttagcgtctgtaagtccta
+>lja-miR7522 MIMAT0029337 Lotus japonicus miR7522 | 
+AACCGGCGGACGGTTTTATGAC
+>3037|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	3036
+ctctaattgtgcacttgga
+>3038|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	3037
+gttgagcattcaagtcttc
+>3039|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	3038
+cgcttaggctttatgatca
+>3040|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	3039
+gacttagttgagcctctta
+>3041|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	3040
+agaactgtttcactttggc
+>3042|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	3041
+acgtaggaattcctcttgt
+>3043|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	3042
+tttgcatgctactagcagt
+>3044|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	3043
+attcgcatcatcggtagtt
+>3045|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	3044
+gtgcaattttcgattacgc
+>3046|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 19 bp	3045
+cgagattgaccattgttct
+>osa-miR2921 MIMAT0014052 Oryza sativa miR2921 | 
+AUAGACTTAATATAACTTAAAGC
+>644|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	250643
+accggagcagcagatctttt
+>645|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	250644
+atagtgtgcgctgacaccat
+>646|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	250645
+aggctaattgatgccactcg
+>647|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	250646
+acgtcatctagcgagcatgt
+>648|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	250647
+gcgtacgctgacgtaatatc
+>649|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	250648
+tctggtagcaactaagtgcc
+>650|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	250649
+attcagatcctggctgacag
+>651|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	250650
+tccgtagaccatgggactta
+>652|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	250651
+agctaattgcctagagcgct
+>653|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	250652
+gcagaaacctttcgtaggtc
+>gma-miR4365 MIMAT0018264 Glycine max miR4365 | 
+AGAACTTCTCCGCGAGATCGCA
+>748|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	250747
+cctatgttacggcaatgacg
+>749|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	250748
+gcagcggacgatctattcat
+>750|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	250749
+gtttataccggctccgaaag
+>751|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	250750
+gtcgactgttatcgaaaccg
+>752|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	250751
+ttacctgcgccattgagaga
+>753|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	250752
+catgtttgatggcgacccaa
+>754|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	250753
+atgtagattcgatccccgag
+>755|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	250754
+ctgaaagtctcgttacgacg
+>756|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	250755
+agtaaaggcattctgcgtcc
+>757|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	250756
+actcaaggacttcgacggtt
+>bdi-miR5175a MIMAT0020719 Brachypodium distachyon miR5175a | 
+AAGAATGTAGGAACUGAGGGA
+>1122|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251121
+acaggatactggctattccg
+>1123|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251122
+atatcgacgcctacggatgt
+>1124|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251123
+gcttcgtagcacagacttag
+>1125|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251124
+agcttccacgtagcgagtat
+>1126|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251125
+aatacgggcttgcatactgc
+>1127|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251126
+ataatgaatcccttccgggg
+>1128|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251127
+acggtgacatatactcggtc
+>1129|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251128
+tcaatactgacgcctgaggt
+>1130|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251129
+ccatagtctctatgaacggg
+>1131|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251130
+tagttgaacgctccgagatc
+>osa-miR5528 MIMAT0022163 Oryza sativa miR5528 | 
+AAGACGGATTTAGATGCTGCG
+>1251|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251250
+cgaccgggtatatatgcact
+>1252|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251251
+tgaaacatcttcctgggagc
+>1253|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251252
+ctatacaggatctgcagcgt
+>1254|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251253
+cattgacggatacctatgcg
+>1255|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251254
+tcgctagcgctgcaattaga
+>1256|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251255
+ttccaacgtcaggtgcaatg
+>1257|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251256
+gtgaactctgacggctatac
+>1258|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251257
+ttgccggacatctgctagaa
+>1259|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251258
+aaactcactgggacgttgct
+>1260|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251259
+agagccttctatggatcagc
+>ath-miR852 MIMAT0004275 Arabidopsis thaliana miR852 | 
+AAGATAAGGCCTTGTTCTC
+>1275|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251274
+tatcctacataagggctcgg
+>1276|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251275
+accatgctggacttgatgac
+>1277|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251276
+tgcaagttatcgaatcgccg
+>1278|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251277
+ggccgaaattcaatttcggc
+>1279|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251278
+gtgaatacccgtagtatcgc
+>1280|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251279
+acgcatgtgtatagcgctac
+>1281|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251280
+tttggtctacccggagaaac
+>1282|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251281
+tatggccgctattaacaggc
+>1283|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251282
+cgatggctcgcatacatgta
+>1284|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251283
+attcaggggtgtatcaaccc
+>mtr-miR2600b MIMAT0021328 Medicago truncatula miR2600b | mtr-miR2600c MIMAT0021329 Medicago truncatula miR2600c | mtr-miR2600d MIMAT0021330 Medicago truncatula miR2600d | 
+AAGCATTGTGGCUTTGTGATTGGGCT
+>1603|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251602
+aatgcgagtgcccaacgttt
+>1604|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251603
+gatgtacttccgatggcaca
+>1605|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251604
+atataccctgaagctcgtgg
+>1606|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251605
+gctcatgattctcggagaca
+>1607|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251606
+ctggtcaacatgtaaccgtg
+>1608|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251607
+ttttagctcgaagggcccaa
+>1609|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251608
+atccttatatgaggcgccga
+>1610|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251609
+ttcaaccactggacggagtt
+>1611|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251610
+atgcggaacggcatactctt
+>1612|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251611
+aaccgagttttggcagatcc
+>tcc-miR169f MIMAT0020396 Theobroma cacao miR169f | 
+UGCCAAGAATGACTTGCCTCG
+>1619|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251618
+aatctgagaccgggatctct
+>1620|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251619
+aatcgctacggttgcacgta
+>1621|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251620
+gatgcaagcgccgctaattt
+>1622|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251621
+gaaaatcaccttgttcgcgg
+>1623|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251622
+atgcgccggatatctcgata
+>1624|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251623
+tacagtccgaagtatgcgct
+>1625|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251624
+ctcaacaggtagtcctgtga
+>1626|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251625
+cgctcctatgaggtagatca
+>1627|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251626
+tgattagggacatcccatcg
+>1628|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	251627
+cagattacacctctagtggg
+>mtr-miR169d-5p MIMAT0011064 Medicago truncatula miR169d-5p | gma-miR169s MIMAT0023218 Glycine max miR169s | 
+AAGCCAAGGTGACTTGGCGGG
+>2102|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252101
+ggtaatacaatcccctggtg
+>2103|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252102
+catctggcgcgatctatgaa
+>2104|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252103
+cgatcctaagagagttcgct
+>2105|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252104
+aatcgcgtggtacacacttg
+>2106|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252105
+tggcgcgaattacattgacc
+>2107|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252106
+gcgaatcaggcctgattcta
+>2108|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252107
+agtcctgttacggtaacgca
+>2109|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252108
+attgttgaggcagcccatca
+>2110|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252109
+tggaaccctgctctagtgaa
+>2111|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252110
+tcagtgcgacgtaaccagtt
+>ptc-miR169ag MIMAT0025269 Populus trichocarpa miR169ag | 
+AGCCAAGGGTGACTTGCCCTGAA
+>2184|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252183
+ttgacacagcatgtcaggct
+>2185|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252184
+ctcgacaagaagttgcgctt
+>2186|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252185
+aaatcgcgctacatttggcg
+>2187|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252186
+cacgtgagcgtacatacgtt
+>2188|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252187
+gacgacatcctgtgatctag
+>2189|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252188
+accgtctagatgacaggtct
+>2190|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252189
+tatcgatatgactacggcgc
+>2191|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252190
+agcattgcatgcatggctca
+>2192|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252191
+gattcgtccgcaaaatgtgc
+>2193|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252192
+gcgatgggatcaccttaatc
+>ama-miR396-3p MIMAT0031155 Avicennia marina miR396-3p | 
+AGCTCAAGAAAGCCTGTAGGA
+>2397|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252396
+aactagatgtttaggccccg
+>2398|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252397
+ctacatgaagatggctgctc
+>2399|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252398
+gcacaatgttgcggttacac
+>2400|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252399
+cgagtgctaattgtagccca
+>2401|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252400
+gtgttagccctgtcaagaac
+>2402|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252401
+ctgcgggtcaacactaatgt
+>2403|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252402
+aaggcatctttcagcgcatg
+>2404|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252403
+caaattgtcggagtgctacc
+>2405|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252404
+cccaattgcttagcgggata
+>2406|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252405
+gagcttatttacaggcagcc
+>ghr-miR7486a MIMAT0029127 Gossypium hirsutum miR7486a | ghr-miR7486b MIMAT0029128 Gossypium hirsutum miR7486b | 
+AAGGAAACGCTTTGTCCACGAGGA
+>2807|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252806
+tctatcgagcgtgcagacat
+>2808|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252807
+gaacttttgcgcctagaagc
+>2809|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252808
+aatttgactagcctgcagcg
+>2810|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252809
+gccgactattcaggaagttc
+>2811|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252810
+gaaacgtcgcgctattgcat
+>2812|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252811
+gcgcaggactattattcgac
+>2813|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252812
+gactctaccgtaggtatgca
+>2814|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252813
+aggggtaaccacttcttcag
+>2815|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252814
+aaatacttgtcagctgcgcg
+>2816|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252815
+ccgtgtatgtcgcaacgata
+>ptc-miR6462c-5p MIMAT0025205 Populus trichocarpa miR6462c-5p | 
+AAGGGACAAAAATGCCUTAAGG
+>2979|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252978
+agattagctctcagcggcta
+>2980|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252979
+attcaaccggttgtcagagc
+>2981|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252980
+acactcgtctgcaggtgaat
+>2982|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252981
+gttcgacaatgcatgacgct
+>2983|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252982
+tcagcgctcaggtatgacta
+>2984|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252983
+tgtcggcagaacactatgtc
+>2985|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252984
+gctggagatgacatcttacc
+>2986|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252985
+gaccaggtctaacttggatc
+>2987|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252986
+tgcgtctataacaatcgggc
+>2988|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	252987
+tgagatctaagtgcccgtca
+>osa-miR2919 MIMAT0014050 Oryza sativa miR2919 | 
+CAAGGGGGGGGGGGGGAACAGA
+>3417|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	253416
+aatgccgatcgttatgcgac
+>3418|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	253417
+agctgcctacgaatctggta
+>3419|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	253418
+cccggagtgtagccttaaat
+>3420|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	253419
+aatcgctgtgcgctaatagc
+>3421|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	253420
+tggctaaacgcaatggtctc
+>3422|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	253421
+ccggaatgctgcattcgaat
+>3423|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	253422
+ctgctcttcggaaggaacat
+>3424|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	253423
+actttccgtcaggaagtgac
+>3425|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	253424
+tggagcagtcacgttcctaa
+>3426|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	253425
+tagcgtcgcacgattagatc
+>cre-miR905-3p MIMAT0004386 Chlamydomonas reinhardtii miR905-3p | 
+AAGGTGCCATGTCGAGGGACCC
+>3680|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	253679
+gtctgagcgatccagtcaat
+>3681|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	253680
+tctggcagtgagacccatat
+>3682|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	253681
+cctgacctgaagggcttaat
+>3683|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	253682
+gccgtcaggcatattctaag
+>3684|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	253683
+tgcaagcgtttccagtcaga
+>3685|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	253684
+tgagtcttcgccacagaagt
+>3686|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	253685
+ctaatggtcgtgaccctaga
+>3687|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	253686
+ggcaatcaggtgtacctcta
+>3688|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	253687
+atcggatacgctatctcgga
+>3689|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	253688
+tttgaatcgacatgcgcgca
+>sbi-miR821a MIMAT0011385 Sorghum bicolor miR821a | sbi-miR821c MIMAT0011387 Sorghum bicolor miR821c | 
+AAAGTCACCAAATAAAAGTTG
+>4061|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	254060
+ttcagcgtgaaagctgcact
+>4062|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	254061
+ggtgattactcgccgataac
+>4063|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	254062
+tcgccgtctaggagatacta
+>4064|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	254063
+aaatggcgagctcctactgt
+>4065|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	254064
+ttctaacctggatgagaccg
+>4066|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	254065
+gacgttgacgcgttataacc
+>4067|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	254066
+gtcgacctacatgcatggta
+>4068|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	254067
+ggaactccgaggctttaact
+>4069|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	254068
+agtggccatagctagtcact
+>4070|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 20 bp	254069
+tggactaaggacactcgctt
+>osa-miR812n-5p MIMAT0019679 Oryza sativa miR812n-5p | 
+CUGTGCAGCCATGAGGTTCCGTGC
+>323|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500322
+agatagacgtagtccttcctg
+>324|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500323
+acaaggatatcccgcgtttgt
+>325|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500324
+tgcgtttcagttgacgacaac
+>326|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500325
+cggatctattatgctgagcac
+>327|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500326
+caaccttcgtgaagcatgttg
+>328|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500327
+catccgccaatgtttgagtag
+>329|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500328
+cccatggcgtttgttaagcaa
+>330|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500329
+tacagtctcggtatgcaatgc
+>331|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500330
+cggttgagactcctgatcaat
+>332|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500331
+atccactgagcttgttaacgg
+>ppe-miR6263 MIMAT0027280 Prunus persica miR6263 | 
+AAGTGGACAAAAGUGGGAGG
+>689|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500688
+tgttagccgaatgcctgacat
+>690|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500689
+caaccgagtggttaactttgc
+>691|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500690
+ctgactagggcgtcatttcaa
+>692|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500691
+ggtaacaatggcgctactctt
+>693|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500692
+catagctatccggtcttagag
+>694|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500693
+gcaaagcgttatgtgtcctca
+>695|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500694
+ccgtcagggattactgctaat
+>696|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500695
+gcttgatcggatacaatgtcc
+>697|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500696
+catattaggtcagcactgtcg
+>698|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500697
+tcggcgatcaagatatctgtc
+>bdi-miR395d-3p MIMAT0020723 Brachypodium distachyon miR395d-3p | 
+AAAGTTTTGGGGAACTCAGG
+>796|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500795
+tgccgtaaacctgcaggattt
+>797|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500796
+attaagtgctcggcttcgaca
+>798|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500797
+acgcatctgcgatttatcgag
+>799|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500798
+cgcgtttgtgccagatcaaat
+>800|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500799
+gatgacagttagcccgcttat
+>801|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500800
+gtaactgagttacgcgcctat
+>802|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500801
+acgtcttagcctggagaactt
+>803|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500802
+cgcattaccgcagtaaggttt
+>804|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500803
+gcatagtacattgtcggctac
+>805|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500804
+taaatgacgcccgattgtgct
+>mtr-miR7696d-5p MIMAT0029992 Medicago truncatula miR7696d-5p | 
+AAGTTUCTCTAATTACAAAACG
+>834|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500833
+agagtaaagcgtgcctttctc
+>835|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500834
+ttatgggacccagtgtcaatc
+>836|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500835
+tgcaagtgagcacatcttcgt
+>837|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500836
+tccctgaagacgcgttagatt
+>838|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500837
+tcaacatctagtctgaggcgt
+>839|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500838
+ctcatttcctgggaacgtaag
+>840|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500839
+cgataagatttccaggtgtcc
+>841|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500840
+ataacggatattttggcccgc
+>842|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500841
+ggcatatagttgacagctcct
+>843|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	500842
+ttgcacgccatggatatgact
+>gma-miR4415b-5p MIMAT0022997 Glycine max miR4415b-5p | 
+AAGTATGTGATGGGAATCACGGCA
+>1212|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501211
+tttaatcgatggtagccagcc
+>1213|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501212
+atcgttcatgggcgactatac
+>1214|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501213
+ctctgtcaacgaggtcattga
+>1215|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501214
+tatcgttgacacaggagctct
+>1216|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501215
+caattgcgcaatgttactgcg
+>1217|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501216
+ctggtgttcacgataactgca
+>1218|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501217
+taggtcactactgtgacatgc
+>1219|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501218
+ggccagttggtaacaacttct
+>1220|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501219
+ggcatggtctgcaaatcctat
+>1221|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501220
+atgttccgtgatcaagcatcg
+>bra-miR5712 MIMAT0023009 Brassica rapa miR5712 | 
+AAATTAATATAATTGGCTGAA
+>1676|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501675
+cggaagctctgagatactctt
+>1677|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501676
+atctcatgtcggaatcacgtg
+>1678|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501677
+gcttatcgatgcgtaatccag
+>1679|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501678
+tgcctatagtctctgcaaagg
+>1680|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501679
+cctctaatgaatggttgccag
+>1681|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501680
+cgaggttctcaagtaactgtc
+>1682|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501681
+caaagtagtccctctttaggg
+>1683|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501682
+ttgacattctgcgatcaacgg
+>1684|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501683
+gttattgggcctatgaccaac
+>1685|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501684
+caacagatggtttcatggcct
+>gma-miR4384 MIMAT0018294 Glycine max miR4384 | 
+AATCAGACGCTGCTTCAAAGAG
+>1770|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501769
+ccgcttttttagacgagagca
+>1771|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501770
+agatagtcacgcgtgtcctta
+>1772|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501771
+atgacttctctaatgggaccg
+>1773|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501772
+taaccttgacgctgttcagag
+>1774|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501773
+cgagcgtatgtctctgtcaaa
+>1775|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501774
+ttaaagtattcggccgctcga
+>1776|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501775
+gtgtgtcgttaaaacgctacc
+>1777|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501776
+acggagtagctactcatgtct
+>1778|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501777
+tttcaggaacctgtacggatc
+>1779|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	501778
+actatgggctactgcattcag
+>cre-miR919.1 MIMAT0004969 Chlamydomonas reinhardtii miR919.1 | 
+AATCUAGATGCGACCGGAGAT
+>2246|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502245
+gttccccattagctggaaagt
+>2247|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502246
+gaatgatcgttaatcgtcccg
+>2248|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502247
+agcggaaccgttctagatttc
+>2249|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502248
+tcaatagattggtgctacgcc
+>2250|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502249
+acgcgtgtccttaaaagtgtc
+>2251|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502250
+aacttgggtggcatcaatcct
+>2252|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502251
+atgccatatctctggatgcga
+>2253|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502252
+tcaatgaagccgttgctacgt
+>2254|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502253
+cgtagtgcctcatctgaagta
+>2255|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502254
+ggtcatcgactggttacaatc
+>aly-miR3444a-3p MIMAT0017722 Arabidopsis lyrata miR3444a-3p | 
+AACTCATCAACTCCGAATA
+>2344|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502343
+ctggaactggcataatgctct
+>2345|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502344
+ggctcgagatcgtctattaca
+>2346|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502345
+tgcactttatgtaagcgaccg
+>2347|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502346
+actcctaacgtcataggtgtg
+>2348|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502347
+tagcatatactcgcgtggcta
+>2349|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502348
+gagatgtcctttcacggacat
+>2350|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502349
+ttataggcagcagacctttgc
+>2351|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502350
+ctgagttgaggtcttaacacc
+>2352|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502351
+gcctacttttgcagaaacgtg
+>2353|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502352
+ggtatatcccatggtctaagc
+>mdm-miR482d MIMAT0026039 Malus domestica miR482d | 
+AATGGAAAGGGGTAGAAAGAAG
+>2508|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502507
+ctagtctagatccaggtcagt
+>2509|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502508
+tgctacaccgttacaagttgg
+>2510|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502509
+attgagcgcttcccataaggt
+>2511|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502510
+agttgactcctaattagcggc
+>2512|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502511
+gcttgcattaatggcagactc
+>2513|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502512
+cggtctacggctttagatcaa
+>2514|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502513
+gagtcgtttacattggaccac
+>2515|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502514
+cgaagttatctcttggcgaca
+>2516|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502515
+gtccggacatgaatagccttt
+>2517|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502516
+tcgcgttcagactatacgatg
+>ptc-miR475a-5p MIMAT0022915 Populus trichocarpa miR475a-5p | ptc-miR475b-5p MIMAT0022916 Populus trichocarpa miR475b-5p | ptc-miR475d-5p MIMAT0022917 Populus trichocarpa miR475d-5p | 
+AAACGGCCATTGTAAGAGCTAGA
+>2999|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502998
+tacttgctggaatcctagcag
+>3000|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	502999
+aagcttcgacatcgctgtatg
+>3001|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503000
+acccgcgattatggttagtac
+>3002|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503001
+attagtcaggtcgcaccgtat
+>3003|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503002
+aacttatcaggtgagcgcctt
+>3004|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503003
+gggcgattaaagcctttatcc
+>3005|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503004
+gatctcggagaagatttccct
+>3006|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503005
+cttggctcatcaaggaatgtc
+>3007|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503006
+tgcgtctgcaatactgctgaa
+>3008|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503007
+tgtgatctgcacgaaatctgc
+>osa-miR5536 MIMAT0022172 Oryza sativa miR5536 | 
+CATGGTAGTGACAATATGGTAG
+>3285|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503284
+agatgaattcacgtctggcct
+>3286|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503285
+gcgcccaaatcgagtgatttt
+>3287|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503286
+cgaaagctgcgttcttcatga
+>3288|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503287
+ggaaaacgcatgtcctttgct
+>3289|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503288
+gatacggctcctttaaggact
+>3290|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503289
+caatatagcgctatgtcgcgt
+>3291|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503290
+caatcggatcgtagttcgtca
+>3292|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503291
+ctagagatggtctcaacttcg
+>3293|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503292
+cgacaatgcttcggtagctta
+>3294|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503293
+gaactctctagatgttgcagc
+>bra-miR5723 MIMAT0023022 Brassica rapa miR5723 | 
+AATGTGCTUCAAATCCTCTGC
+>3306|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503305
+cggcaagctgtatccgtatat
+>3307|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503306
+gtcactctatttacgacgagg
+>3308|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503307
+gtgtacgaccggttttaccaa
+>3309|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503308
+gaggaactttgagctctcatc
+>3310|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503309
+aaccttccgcgaatgtgtatg
+>3311|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503310
+ggactactagggaattctctc
+>3312|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503311
+cgtatagtgatgtgcccacta
+>3313|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503312
+ggttcaggcattcatgctaac
+>3314|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503313
+cctaggttgacagtacgttca
+>3315|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503314
+actcttgcccggaggatatta
+>osa-miR5815 MIMAT0023287 Oryza sativa miR5815 | 
+GATGUTATGGACACTAGUATGACAT
+>3567|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503566
+aactcattgcagtactgcgtg
+>3568|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503567
+cgacgcttgagtagttacatc
+>3569|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503568
+gatcctcacgggacgattatt
+>3570|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503569
+tccgatgaccacgtagtgatt
+>3571|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503570
+tgtcgatctacacgtgatcga
+>3572|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503571
+gtcctccgtcgggtaaataat
+>3573|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503572
+tcaccaggcttggtgcaatat
+>3574|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503573
+taaagttgactacggtcctcg
+>3575|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503574
+cctggtcaatacagcttaggt
+>3576|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503575
+tgagtgcctatcgataactcg
+>osa-miR1881 MIMAT0007838 Oryza sativa miR1881 | 
+AATCTTATTGTAGCGTGGTGAGTAT
+>3863|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503862
+tccagatcgcttcagggtata
+>3864|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503863
+ctagctattgggcacgatatc
+>3865|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503864
+tcatatgtattagcccagcgg
+>3866|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503865
+ttctagtgtgcaaagctcgca
+>3867|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503866
+taagctgtcgaatggcctact
+>3868|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503867
+acggaattggttatcccagtc
+>3869|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503868
+ttccgcctcaaaaggttagtg
+>3870|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503869
+tcctatgtacaggctaaggtc
+>3871|random sequence|A: 0.25|C: 0.25|G: 0.25|T: 0.25|length: 21 bp	503870
+atacagtatcgattgcgctcg
