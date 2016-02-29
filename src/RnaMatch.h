@@ -66,7 +66,9 @@ protected:
 		typedef std::vector<MiRnaAlignmentResult> RnaResult;
 
         unsigned int nbAligned = 0;
+        unsigned int nbQuerried = 0;
         bool isAligned = false;
+        bool isQuerried = false;
 
     protected:
         std::vector<RnaResult> m_results; // one entry per mi rna

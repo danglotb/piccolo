@@ -102,23 +102,13 @@ void run(RnaDataBase const& sequences, RnaIndex const& index, std::ostream& out,
             }
         }
     } else {
-        unsigned int cpt = 0;
-        unsigned int index = 0;
         for (MiRnaEntry const& entry : sequences) {
             matcher.match(entry.second, parameters.best, parameters.global);
-            /*if (!matcher.displayResult(entry, out, parameters.humanReadable)) {
+            if (!matcher.displayResult(entry, out, parameters.humanReadable)) {
                 std::cerr << "Unable to write output." << std::endl;
                 return;
-            }*/
-            if (matcher.isAligned) {
-                std::cout << index << ":" << matcher.nbAligned << std::endl;
-                matcher.nbAligned = 0;
-                matcher.isAligned = false;
-                cpt++;
             }
-            index++;
-        }
-        std::cout << cpt << " / " << index << std::endl;
+       }
     }
 }
 
@@ -155,6 +145,10 @@ int main(int argc, char const* argv[]) {
         std::cerr << "Unable to parse reference file." << std::endl;
         return EXIT_FAILURE;
     }
+
+    /*for(const MiRnaEntry &m : index) {
+        std::cout << m.second << std::endl;
+    }*/
 
     // ================================
     //		Input

@@ -16,6 +16,11 @@ void RnaMatch::processQueryResult(int seq_pos, const Query_t& query, QueryMeta c
     if (!queryResult.size())
         return;
 
+    if (!isQuerried) {
+        nbQuerried++;
+        isQuerried = true;
+    }
+
     //In order to get right boolean, which depend of the type Query_t (Query or QueryGlobal)
     std::tuple<bool,bool,bool> unqueriedBlock = (query.unqueriedBlock());
 
@@ -213,6 +218,8 @@ void RnaMatch::match_global(const nt* sequence_begin, const nt* sequence_end) {
         QueryGlobal q;
         q.setBlockIds(b.blockA(), b.blockB());
 
+       // std::cout << "[" << b.blockA() << ";" << b.blockB() << "]" << std::endl;
+
         for (int j = -b.m_offsetB ; j <= b.m_offsetB ; j++) {
             for (int e = -b.m_offsetA ; e <= b.m_offsetA; e++) {
 
@@ -224,8 +231,14 @@ void RnaMatch::match_global(const nt* sequence_begin, const nt* sequence_end) {
                 unsigned int blockB_beg = std::min(b.blockB()*BLOCK_SIZE_AT(b.blockA())+j+e, size_seq);
                 unsigned int blockB_end = std::min((b.blockB()+1)*BLOCK_SIZE_AT(b.blockA())+j+e, size_seq);
 
-                q.setBlockHash(util::hash(sequence_begin + blockA_beg, sequence_begin + blockA_end),
-                               util::hash(sequence_begin + blockB_beg, sequence_begin + blockB_end));
+             //   std::cout << blockA_beg << ";" << blockA_end << " : " << blockB_beg << ";" << blockB_end << std::endl;
+
+                BlockHash hashA = util::hash(sequence_begin + blockA_beg, sequence_begin + blockA_end);
+                BlockHash hashB = util::hash(sequence_begin + blockB_beg, sequence_begin + blockB_end);
+
+                q.setBlockHash(hashA,hashB);
+
+            //    std::cout << std::endl;
 
                 unsigned int offsetMeta =  (b.blockB()*BLOCK_SIZE_AT(b.blockA())+j) - (b.blockA()+1)*BLOCK_SIZE_AT(b.blockA());
 
